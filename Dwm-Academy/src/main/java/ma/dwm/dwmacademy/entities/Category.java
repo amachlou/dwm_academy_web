@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +21,7 @@ public class Category extends BaseEntity {
 	@Column(nullable = false)
 	private String name;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "category")
 	private List<Course> list_courses;
 	
