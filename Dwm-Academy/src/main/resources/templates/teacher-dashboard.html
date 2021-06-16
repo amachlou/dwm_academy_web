@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tiny.cloud/1/uupfvcqhkleheq3ho6aygpxrzsttp4ttzoj988u3az0ytr75/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <!-- ! UIKIT CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="custom-css/dashboard.css">
+    <link rel="stylesheet" href="custom-css/global.css">
+
+</head>
+
+<body class="body">
+
+    <!-- ! NAVBAR -->
+
+    <nav class="uk-navbar" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav uk-visible@m">
+                <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img src="images/logo.png"
+                            height="80" width="80" alt=""></a></li>
+
+                <li>
+                    <a href="#" class="categories">CATEGORIES</a>
+                    <div class="uk-navbar-dropdown uk-border-rounded uk-margin-xlarge-top">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="uk-margin uk-margin-large-left">
+                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-*">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input uk-border-rounded" type="search" placeholder="Search">
+                    </form>
+                </li>
+            </ul>
+            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
+                uk-toggle="target: #offcanvas-overlay"></a>
+            <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img src="images/logo.png"
+                    height="80" width="80" alt=""></a>
+        </div>
+        <div class="uk-navbar-right ">
+            <ul class="uk-navbar-nav">
+                <li class="uk-margin-small-right uk-visible@m"><a href="#">My Courses</a></li>
+                <li>
+                    <img class="uk-border-circle uk-margin-small-top" width="50" height="50" src="images/t1.jpg">
+                    <div class="uk-navbar-dropdown uk-border-rounded">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ! MOBILE MENU -->
+
+    <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar uk-background-default">
+
+            <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-default">
+                <li class="uk-active uk-text-large"><a href="#">Menu</a></li>
+
+                <li class="uk-margin">
+                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-*">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input uk-border-rounded" type="search" placeholder="Search">
+                    </form>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#" class="uk-text-bolder">My Courses</a>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#" class="uk-text-bolder">CATEGORIES</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- ! Profile -->
+
+    <div class="uk-section">
+        <div class="uk-container">
+
+            <div class="uk-text-center" uk-grid>
+                <div class="uk-width-1-4@m uk-margin-large-bottom">
+                    <ul class="uk-list">
+                        <li class="uk-margin"><img class="uk-border-circle" src="images/t2.jpg" width="150" height="150"
+                                alt="Border circle"></li>
+                        <li class="uk-margin">
+                            <h2>Jihane Arfi</h2>
+                        </li>
+                        <li class="uk-margin"><span class="username uk-border-rounded">Teacher</span></li>
+                        <li class="uk-margin">Female</li>
+                        <li class="uk-margin">18-10-1995</li>
+                        <li class="uk-margin">jihanrabat345@gmail.com</li>
+                        <li class="uk-margin">
+                            <button
+                                class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting">Edit
+                                Profile</button>
+                        </li>
+                        <li class="uk-margin">
+                            <button
+                                class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting">Add
+                                Content</button>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="uk-width-expand@m">
+                    <ul class="uk-subnav uk-margin-remove-right dashboard-tab uk-subnav-pill " uk-switcher>
+                        <li><a class="uk-border-rounded" href="#">My Profile</a></li>
+                        <li><a class="uk-border-rounded" href="#">My Content</a></li>
+                        <li><a class="uk-border-rounded" href="#">My Courses</a></li>
+                    </ul>
+
+                    <ul class="uk-switcher uk-text-left uk-margin-large-bottom">
+                        <li class="uk-width-1-2@m">
+
+                            <!-- ? form -->
+
+                            <form class="uk-form-stacked">
+
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="first">Fisrt Name</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="first" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="last">Last Name</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="last" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="date">Date of Birth</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="date" type="date"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="email">Email</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="email" type="email"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="current-pass">Current Password</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="current-pass" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="new-passconfirm-new-pass">New Password</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="new-passconfirm-new-pass"
+                                            type="text" placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="confirm-new-pass">Confirm New Password</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="confirm-new-pass" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin-medium uk-grid-small uk-child-width-auto uk-grid">
+                                    <label><input class="uk-radio" type="radio" name="radio2" checked>Male</label>
+                                    <label><input class="uk-radio" type="radio" name="radio2">Female</label>
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="image">Profile Picture</label>
+                                    <div class="uk-form-controls">
+                                        <div uk-form-custom="target: true">
+                                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: image"></span>
+                                            <input type="file">
+                                            <input class="uk-input uk-border-rounded" type="text"
+                                                placeholder="Select file" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting">Save
+                                    Changes</button>
+
+                            </form>
+
+                            <!-- ? description -->
+
+                            <form class="uk-hidden">
+                                <div class="uk-margin">
+                                    <input
+                                        class="uk-input uk-border-rounded uk-form-width-large uk-form-blank title uk-text-large uk-form-width-medium"
+                                        value="This is a title here" type="text" placeholder="Form blank">
+                                </div>
+                                <div class="uk-margin">
+
+                                    <textarea class="uk-textarea uk-border-rounded uk-form-blank textarea"
+                                        maxlength="800" expand="true" style="overflow: hidden;" rows="5"
+                                        placeholder="Textarea">Hello i'm Jijinet</textarea>
+
+                                </div>
+                            </form>
+                        </li>
+
+                        <li class="uk-width-1-1@m">
+
+                            <!--? add new  -->
+
+                            <div class="uk-placeholder uk-text-center uk-hidden uk-border-rounded"><button
+                                    class="uk-button uk-button-default uk-button-small uk-text-capitalize uk-border-rounded add-new">Add
+                                    Content</button>
+                            </div>
+
+
+                            <!-- ? form course -->
+
+                            <h3>Course Description</h3>
+                            <hr>
+                            <form class="uk-form-stacked">
+
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="title">Title</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="title" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="description">Description</label>
+                                    <div class="uk-form-controls">
+                                        <div id="toolbar">
+                                            <!-- Add buttons as you would before -->
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+
+                                            <!-- But you can also add your own -->
+                                            <button id="custom-button"></button>
+                                        </div>
+                                        <div class="uk-width-expand" id="editor"></div>
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin-medium uk-child-width-1-3">
+                                    <label class="uk-form-label" for="duration">Duration</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="duration" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="image">Course Picture</label>
+                                    <div class="uk-form-controls">
+                                        <div uk-form-custom="target: true">
+                                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: image"></span>
+                                            <input type="file">
+                                            <input class="uk-input uk-border-rounded uk-child-width-1-3" type="text"
+                                                placeholder="Select file" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <!-- ? form content -->
+
+                                <h3>Content Description</h3>
+                                <hr>
+                                <div class="uk-margin-medium">
+                                    <label class="uk-form-label" for="title">Title</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="title" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium uk-child-width-1-3">
+                                    <label class="uk-form-label" for="duration">Duration</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input uk-border-rounded" id="duration" type="text"
+                                            placeholder="Some text...">
+                                    </div>
+                                </div>
+                                <div class="uk-overflow-auto uk-panel-scrollable">
+                                    <table class="uk-table uk-table-justify uk-table-divider">
+                                        <thead>
+                                            <tr>
+                                                <th class="uk-width-small">Table Heading</th>
+                                                <th>Table Heading</th>
+                                                <th>Table Heading</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Table Data</td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                                                <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Table Data</td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                                                <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                           
+                                <button
+                                    class="uk-button uk-button-default uk-margin-medium uk-button-small uk-border-rounded uk-text-capitalize setting">Add Course</button>
+
+                            </form>
+
+
+                            <!--? content  -->
+
+                            <div class="uk-grid-row-large uk-child-width-1-3@s uk-text-center uk-hidden" uk-grid>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-border-rounded">
+                                        <div class="uk-card-media-top">
+                                            <img class="uk-border-rounded"
+                                                src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        </div>
+                                        <div class="uk-card-body uk-padding-remove uk-border-rounded">
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+                                            <p class="uk-text-small uk-text-center uk-margin-remove"><span>40</span>
+                                                student</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="uk-width-1-1@s">
+                                    <ul class="uk-pagination">
+                                        <li><a href="#"><span class="uk-margin-small-right"
+                                                    uk-pagination-previous></span> Previous</a></li>
+                                        <li class="uk-margin-auto-left"><a href="#">Next <span
+                                                    class="uk-margin-small-left" uk-pagination-next></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li>
+
+                            <!--? add new  -->
+
+                            <div class="uk-placeholder uk-text-center uk-border-rounded"><button
+                                    class="uk-button uk-button-default uk-button-small uk-text-capitalize uk-border-rounded add-new">Add
+                                    Courses</button></div>
+
+                            <!--? content-->
+
+                            <div class="uk-text-center uk-hidden" uk-grid>
+
+                                <div class="uk-width-1-1@s">
+                                    <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
+                                        uk-grid>
+
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt=""
+                                                uk-cover>
+                                            <canvas width="400" height="200"></canvas>
+                                        </div>
+
+                                        <div class="uk-card-body uk-padding-remove">
+                                            <span uk-icon="more" class="uk-float-right"></span>
+                                            <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="#">Hide</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="uk-width-1-1@s">
+                                    <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
+                                        uk-grid>
+
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt=""
+                                                uk-cover>
+                                            <canvas width="400" height="200"></canvas>
+                                        </div>
+
+                                        <div class="uk-card-body uk-padding-remove">
+                                            <span uk-icon="more" class="uk-float-right"></span>
+                                            <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="#">Hide</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="uk-width-1-1@s">
+                                    <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
+                                        uk-grid>
+
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt=""
+                                                uk-cover>
+                                            <canvas width="400" height="200"></canvas>
+                                        </div>
+
+                                        <div class="uk-card-body uk-padding-remove">
+                                            <span uk-icon="more" class="uk-float-right"></span>
+                                            <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="#">Hide</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="uk-width-1-1@s">
+                                    <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
+                                        uk-grid>
+
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt=""
+                                                uk-cover>
+                                            <canvas width="400" height="200"></canvas>
+                                        </div>
+
+                                        <div class="uk-card-body uk-padding-remove">
+                                            <span uk-icon="more" class="uk-float-right"></span>
+                                            <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="#">Hide</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1@s">
+                                    <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
+                                        uk-grid>
+
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt=""
+                                                uk-cover>
+                                            <canvas width="400" height="200"></canvas>
+                                        </div>
+
+                                        <div class="uk-card-body uk-padding-remove">
+                                            <span uk-icon="more" class="uk-float-right"></span>
+                                            <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="#">Hide</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1@s">
+                                    <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
+                                        uk-grid>
+
+                                        <div class="uk-card-media-left uk-cover-container">
+                                            <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt=""
+                                                uk-cover>
+                                            <canvas width="400" height="200"></canvas>
+                                        </div>
+
+                                        <div class="uk-card-body uk-padding-remove">
+                                            <span uk-icon="more" class="uk-float-right"></span>
+                                            <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="#">Hide</a></li>
+                                                    <li><a href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="" style="color: black !important;">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. Iste, a?</h4>
+                                            <div class="uk-flex uk-flex-between">
+                                                <p>john wilberg</p><span>6h 18m</span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="uk-width-1-1@s">
+                                    <ul class="uk-pagination">
+                                        <li><a href="#"><span class="uk-margin-small-right"
+                                                    uk-pagination-previous></span> Previous</a></li>
+                                        <li class="uk-margin-auto-left"><a href="#">Next <span
+                                                    class="uk-margin-small-left" uk-pagination-next></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- ! FOOTER -->
+
+    <footer id="page-footer" class="" uk-sticky>
+        <div class="uk-container uk-padding-small">
+            <div class="uk-child-width-expand@s" uk-grid>
+
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <ul class="uk-list">
+                        <a href="">
+                            <li>List item 1</li>
+                        </a>
+                        <a href="">
+                            <li>List item 1</li>
+                        </a>
+                        <a href="">
+                            <li>List item 1</li>
+                        </a>
+                        <a href="">
+                            <li>More...</li>
+                        </a>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul class="uk-list">
+                        <a uk-icon="icon: facebook" href=""></a>
+                        <a uk-icon="icon: youtube" href=""></a>
+                        <a uk-icon="icon: instagram" href=""></a>
+                        <a uk-icon="icon: github" href=""></a>
+
+                    </ul>
+                </div>
+
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+
+
+                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img src="images/logo.png" height="100"
+                        width="100" alt=""></a>
+
+            </div>
+            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 E.academy.</p>
+        </div>
+    </footer>
+
+    <!-- ! UIKIT JS -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

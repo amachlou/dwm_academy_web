@@ -1,0 +1,31 @@
+.uk-card-body {
+  padding: 0.5rem 1rem !important;
+}
+
+.my-courses h3 {
+  font-size: 1.3rem;
+}
+ 
+.dashboard-tab.uk-subnav-pill>.uk-active>a {
+   background-color: var(--blue);
+   color: white !important;
+}
+
+
+:root {
+   /* Fonts */
+   --rubik:'Rubik', sans-serif;
+ 
+   /* Colors */
+   --blue:#0f1a26;
+   --orange:#fc363b;
+ }
+
+ button.add-new{
+    background-color: var(--blue);
+    color: var(--orange) !important;
+ }
+ button.add-new:hover{
+   background-color: var(--blue);
+   color: var(--orange) !important;
+}

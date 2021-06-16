@@ -1,0 +1,43 @@
+
+.uk-overlay-default {
+    background: rgba(0,0,0,.8);
+}
+.uk-overlay-primary{
+  background-color:#0f1a26b4 ;
+}
+.uk-overlay-primary p{
+  color: white !important;
+}
+.section-teacher{
+  background-color: var(--orange) !important;
+}
+.section-teacher button{
+  background-color: white;
+  color: var(--blue) !important;
+}
+
+.uk-heading-line>::after, .uk-heading-line>::before {
+  top: calc(45% - ((.2px + .05em)/ 2));
+
+}
+.white{
+  color: white !important;
+}
+
+
+.uk-tab>.uk-active>a {
+  color: var(--orange) !important;
+  border-bottom: 2px solid;
+  border-color:var(--orange);
+}
+
+:root {
+  /* Fonts */
+  --rubik:'Rubik', sans-serif;
+
+  /* Colors */
+  --blue:#0f1a26;
+  --orange:#fc363b;
+}
+
+

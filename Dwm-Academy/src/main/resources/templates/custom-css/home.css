@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+
+
+
+:root {
+    /* Fonts */
+    --raluay:'Rubik', sans-serif;
+    --rubik: 'Raleway', sans-serif;
+  
+    /* Colors */
+    --blue:#0f1a26;
+    --orange:#fc363b;
+  }
+  .my-courses .uk-card-body{
+   padding: .5rem 1rem !important;
+}
+
+  .my-courses h3{
+     font-size: 1.3rem;
+  }
