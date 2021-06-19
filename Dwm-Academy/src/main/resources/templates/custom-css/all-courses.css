@@ -1,0 +1,45 @@
+.uk-subnav-pill > .uk-active > a {
+  background-color: transparent !important;
+}
+
+.uk-subnav-pill > * > :first-child {
+  padding: 0;
+}
+
+.uk-card-body {
+  padding: 0.5rem 1rem !important;
+}
+
+.uk-subnav > * > :first-child {
+  font-size: 1.3rem;
+}
+.categorie-list li{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.active {
+  background-color: var(--blue);
+  color: white !important;
+  
+}
+
+
+
+.categorie-list li a{
+  color: var(--blue);
+}
+
+.categorie-list .uk-list > * > ul,
+.uk-list > :nth-child(n + 2) {
+  margin-top: 0;
+}
+
+:root {
+  /* Fonts */
+  --rubik: "Rubik", sans-serif;
+
+  /* Colors */
+  --blue: #0f1a26;
+  --orange: #fc363b;
+}

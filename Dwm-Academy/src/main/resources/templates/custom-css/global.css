@@ -6,15 +6,15 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: "Rubik", sans-serif;
+  font-family:var(--rubik);
   font-weight: 400;
 }
 *:focus {
   outline: none;
 }
-li,a,span,p,h1,h2,h3,h4,h5,textarea,input{
+li,a,span,p,h1,h2,h3,h4,h5,textarea,th,td,input{
   color: var(--blue) !important;
-  font-family: var(--rubik);
+  font-family: var(--rubik) !important;
 }
 
 .uk-card{

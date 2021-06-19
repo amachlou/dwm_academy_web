@@ -21,16 +21,16 @@ public class DwmAcademyApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
-		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
+//		categoryRepository.save(new Category("AAA", null));
 
 	}
 

@@ -11,6 +11,62 @@
    color: white !important;
 }
 
+.playlist-section{
+  background-color: var(--blue);
+}
+
+.categorie-list li{
+  padding: 10px;
+  border-radius: 5px;
+}
+#video_player h2{
+  color: var(--orange) !important;
+}
+
+.active {
+background-color: rgb(94, 43, 214);
+color: white;
+
+}
+.video-section{
+  background-color: var(--blue);
+}
+.categorie-list h5{
+  color: white !important;
+}
+
+
+#video_player p span{
+  color: white !important;
+}
+
+
+#video_player p{
+  color: white !important;
+}
+
+.uk-panel-scrollable {
+    border: none;
+}
+
+.categorie-list li a{
+color: white !important;
+}
+.categorie-list li span{
+  color: white !important;
+  }
+  
+
+.categorie-list li{
+  color: white !important;
+  }
+
+.categorie-list .uk-list > * > ul,
+.uk-list > :nth-child(n + 2) {
+margin-top: 0;
+}
+
+
 
 :root {
    /* Fonts */
@@ -29,3 +85,8 @@
    background-color: var(--blue);
    color: var(--orange) !important;
 }
+
+table button{
+  color: var(--orange) !important;
+}
+

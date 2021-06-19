@@ -15,84 +15,84 @@
 
 <body class="body">
 
-    <!-- ! NAVBAR -->
+  <!-- ! NAVBAR -->
 
-    <nav class="uk-navbar" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav uk-visible@m">
-                <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img src="images/logo.png"
-                            height="80" width="80" alt=""></a></li>
+  <nav class="uk-navbar" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav uk-visible@m">
+            <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img src="images/logo.png"
+                        height="80" width="80" alt=""></a></li>
 
-                <li>
-                    <a href="#" class="categories">CATEGORIES</a>
-                    <div class="uk-navbar-dropdown uk-border-rounded uk-margin-xlarge-top">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="uk-margin uk-margin-large-left">
-                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-*">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded" type="search" placeholder="Search">
-                    </form>
-                </li>
-            </ul>
-            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
-                uk-toggle="target: #offcanvas-overlay"></a>
-            <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img src="images/logo.png"
-                    height="80" width="80" alt=""></a>
-        </div>
-        <div class="uk-navbar-right ">
-            <ul class="uk-navbar-nav">
-                <li class="uk-margin-small-right uk-visible@m"><a href="#">My Courses</a></li>
-                <li>
-                    <img class="uk-border-circle uk-margin-small-top" width="50" height="50" src="images/t1.jpg">
-                    <div class="uk-navbar-dropdown uk-border-rounded">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- ! MOBILE MENU -->
-
-    <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
-        <div class="uk-offcanvas-bar uk-background-default">
-
-            <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
-            <ul class="uk-nav uk-nav-default">
-                <li class="uk-active uk-text-large"><a href="#">Menu</a></li>
-
-                <li class="uk-margin">
-                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-*">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded" type="search" placeholder="Search">
-                    </form>
-                </li>
-
-                <li class="uk-parent">
-                    <a href="#" class="uk-text-bolder">My Courses</a>
-                </li>
-
-                <li class="uk-parent">
-                    <a href="#" class="uk-text-bolder">CATEGORIES</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
+            <li>
+                <a href="#" class="categories">CATEGORIES</a>
+                <div class="uk-navbar-dropdown uk-border-rounded uk-margin-xlarge-top">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
                     </ul>
-                </li>
-            </ul>
-
-        </div>
+                </div>
+            </li>
+            <li class="uk-margin uk-margin-large-left">
+                <form class="uk-search uk-search-default uk-width-medium uk-child-width-* search-form">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input uk-border-rounded search-value" type="search" placeholder="Search">
+                </form>
+            </li>
+        </ul>
+        <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
+            uk-toggle="target: #offcanvas-overlay"></a>
+        <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img src="images/logo.png"
+                height="80" width="80" alt=""></a>
     </div>
+    <div class="uk-navbar-right ">
+        <ul class="uk-navbar-nav">
+            <li class="uk-margin-small-right uk-visible@m"><a href="#">My Courses</a></li>
+            <li>
+                <img class="uk-border-circle uk-margin-small-top" width="50" height="50" src="images/t1.jpg">
+                <div class="uk-navbar-dropdown uk-border-rounded">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ! MOBILE MENU -->
+
+<div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-background-default">
+
+        <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-active uk-text-large"><a href="#">Menu</a></li>
+
+            <li class="uk-margin">
+                <form class="uk-search uk-search-default uk-width-medium search-form uk-child-width-*">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input uk-border-rounded search-value" type="search" placeholder="Search">
+                </form>
+            </li>
+
+            <li class="uk-parent">
+                <a href="#" class="uk-text-bolder">My Courses</a>
+            </li>
+
+            <li class="uk-parent">
+                <a href="#" class="uk-text-bolder">CATEGORIES</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</div>
     <!-- ! Profile -->
 
     <div class="uk-section">
@@ -111,7 +111,7 @@
                         <li class="uk-margin">18-10-1995</li>
                         <li class="uk-margin">jihanrabat345@gmail.com</li>
                         <button
-                            class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting">Edit
+                            class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting" id="edit-profile">Edit
                             Profile</button>
 
                     </ul>
@@ -127,7 +127,7 @@
 
                             <!-- ? description  -->
 
-                            <form class="">
+                            <form id="profile-description">
                                 <div class="uk-margin">
                                     <input
                                         class="uk-input uk-border-rounded uk-form-width-large uk-form-blank title uk-text-large uk-form-width-medium"
@@ -144,7 +144,7 @@
 
                             <!-- ? form -->
 
-                            <form class="uk-form-stacked uk-hidden">
+                            <form class="uk-form-stacked uk-hidden" id="profile-form">
 
                                 <div class="uk-margin-medium">
                                     <label class="uk-form-label" for="first">Fisrt Name</label>
@@ -215,7 +215,7 @@
                                 </div>
 
                                 <button
-                                    class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting">Save
+                                    class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting" id="save-profile" type="button">Save
                                     Changes</button>
 
                             </form>
@@ -224,13 +224,13 @@
                         <li>
                             <!--? add new  -->
 
-                            <div class="uk-placeholder uk-text-center uk-border-rounded uk-hidden"><button
+                            <div class="uk-placeholder uk-text-center uk-border-rounded"><button
                                     class="uk-button uk-button-default uk-button-small uk-text-capitalize uk-border-rounded add-new">Add
                                     Courses</button></div>
 
                                 <!--? content-->
 
-                            <div class="uk-text-center" uk-grid>
+                            <div class="uk-text-center uk-hidden" uk-grid>
 
                                 <div class="uk-width-1-1@s">
                                     <div class="my-courses uk-card uk-grid-collapse uk-child-width-1-3@l uk-child-width-1-2@s uk-margin"
@@ -433,8 +433,6 @@
                             </div>
                         </li>
 
-                        <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur, sed do eiusmod.</li>
                     </ul>
                 </div>
             </div>
@@ -499,6 +497,8 @@
 
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
