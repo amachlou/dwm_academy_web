@@ -1,4 +1,4 @@
-package ma.dwm.dwmacademy.web;
+package ma.dwm.dwmacademy.controllers;
 
 import java.util.List;
 
