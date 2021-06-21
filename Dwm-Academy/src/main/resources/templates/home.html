@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Dwm Academy</title>
     <!-- ! UIKIT CSS -->
-    <link rel="stylesheet" href="css/uikit.min.css" />
-    <link rel="stylesheet" href="custom-css/home.css">
-    <link rel="stylesheet" href="custom-css/global.css">
+    <link rel="stylesheet" th:href="@{css/uikit/uikit.min.css}" />
+    <link rel="stylesheet" th:href="@{css/custom-css/home.css}">
+    <link rel="stylesheet" th:href="@{css/custom-css/global.css}">
 
 </head>
 
@@ -17,49 +17,9 @@
 
     <!-- ! NAVBAR -->
 
-    <nav class="uk-navbar" uk-navbar>
-        <div class="uk-navbar-left uk-width-1-1">
-            <ul class="uk-navbar-nav uk-visible@m">
-                <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img src="images/logo.png"
-                            height="80" width="80" alt=""></a></li>
-
-                <li>
-                    <a href="#" class="categories">CATEGORIES</a>
-                    <div class="uk-navbar-dropdown uk-border-rounded uk-margin-xlarge-top">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">Web Development</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="uk-margin uk-margin-large-left">
-                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-* search-form">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search"
-                            placeholder="Search">
-                    </form>
-                </li>
-            </ul>
-            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
-                uk-toggle="target: #offcanvas-overlay"></a>
-            <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img src="images/logo.png"
-                    height="80" width="80" alt=""></a>
-        </div>
-        <div class="uk-navbar-right uk-width-1-6">
-            <ul class="uk-navbar-nav">
-                <li class="uk-margin-small-right"><a href="#">My Courses</a></li>
-                <li>
-                    <img class="uk-border-circle uk-margin-small-top" width="50" height="50" src="images/t1.jpg">
-                    <div class="uk-navbar-dropdown uk-border-rounded">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="#">My Profile</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+	<div>
+		<th:block th:replace="fragments/nav :: nav"></th:block>
+	</div>
 
     <!-- ! MOBILE MENU -->
 
@@ -110,7 +70,7 @@
                             uk-grid>
 
                             <div class="uk-card-media-left uk-border-rounded uk-cover-container">
-                                <img src="images/t1.jpg" class="uk-border-rounded" alt="" uk-cover>
+                                <img th:src="@{images/t1.jpg}" class="uk-border-rounded" alt="" uk-cover>
                                 <canvas width="400" height="200"></canvas>
                             </div>
 
@@ -149,7 +109,7 @@
                             uk-grid>
 
                             <div class="uk-card-media-left uk-border-rounded uk-cover-container">
-                                <img src="images/t1.jpg" class="uk-border-rounded" alt="" uk-cover>
+                                <img th:src="@{images/t1.jpg}" class="uk-border-rounded" alt="" uk-cover>
                                 <canvas width="400" height="200"></canvas>
                             </div>
 
@@ -188,7 +148,7 @@
                             uk-grid>
 
                             <div class="uk-card-media-left uk-border-rounded uk-cover-container">
-                                <img src="images/t1.jpg" class="uk-border-rounded" alt="" uk-cover>
+                                <img th:src="@{images/t1.jpg}" class="uk-border-rounded" alt="" uk-cover>
                                 <canvas width="400" height="200"></canvas>
                             </div>
 
@@ -260,7 +220,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -298,7 +258,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -336,7 +296,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -374,7 +334,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -412,7 +372,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -468,7 +428,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -506,7 +466,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -544,7 +504,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -582,7 +542,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -620,7 +580,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -658,7 +618,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -714,7 +674,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -752,7 +712,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -790,7 +750,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -828,7 +788,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -866,7 +826,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -904,7 +864,7 @@
                                     <div>
                                         <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
                                             <div class="uk-card-media-top">
-                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                                <img class="uk-border-rounded" th:src="@{images/t1.jpg}" alt="">
                                             </div>
                                             <div
                                                 class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
@@ -967,7 +927,7 @@
             <ul class="uk-slideshow-items">
                 <li>
                     <div class="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
-                        <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
+                        <img th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="" uk-cover>
                     </div>
                     <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000">
                     </div>
@@ -989,7 +949,7 @@
                 </li>
                 <li>
                     <div class="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
-                        <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
+                        <img th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="" uk-cover>
                     </div>
                     <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000">
                     </div>
@@ -1011,7 +971,7 @@
                 </li>
                 <li>
                     <div class="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
-                        <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
+                        <img th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="" uk-cover>
                     </div>
                     <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000">
                     </div>
@@ -1059,7 +1019,7 @@
                             <div class="uk-card uk-card-default uk-border-rounded">
                                 <div class="uk-card-media-top">
                                     <img class="uk-border-rounded"
-                                        src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Headline</h3>
@@ -1071,7 +1031,7 @@
                             <div class="uk-card uk-card-default uk-border-rounded">
                                 <div class="uk-card-media-top">
                                     <img class="uk-border-rounded"
-                                        src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Headline</h3>
@@ -1083,7 +1043,7 @@
                             <div class="uk-card uk-card-default uk-border-rounded">
                                 <div class="uk-card-media-top">
                                     <img class="uk-border-rounded"
-                                        src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Headline</h3>
@@ -1095,7 +1055,7 @@
                             <div class="uk-card uk-card-default uk-border-rounded">
                                 <div class="uk-card-media-top">
                                     <img class="uk-border-rounded"
-                                        src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Headline</h3>
@@ -1107,7 +1067,7 @@
                             <div class="uk-card uk-card-default uk-border-rounded">
                                 <div class="uk-card-media-top">
                                     <img class="uk-border-rounded"
-                                        src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
+                                        th:src="@{images/team-meeting-full-of-happy-young-adults.jpg}" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Headline</h3>
@@ -1287,7 +1247,7 @@
                 </div>
 
 
-                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img src="/images/logo.png" height="100"
+                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img th:src="@{images/logo.png}" height="100"
                         width="100" alt=""></a>
 
             </div>
@@ -1297,9 +1257,9 @@
 
     <!-- ! UIKIT JS -->
 
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
-    <script src="script.js"></script>
+    <script th:src="@{js/uikit/uikit.min.js}"></script>
+    <script th:src="@{js/uikit/uikit-icons.min.js}"></script>
+    <script th:src="@{script.js}"></script>
 </body>
 
 </html>
