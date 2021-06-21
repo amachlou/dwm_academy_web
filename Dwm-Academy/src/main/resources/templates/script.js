@@ -105,10 +105,12 @@ $( document ).ready(function() {
         let searchValue=$('.search-value').val();
         $(searchName).html(searchValue);
         
-    })
+    });
 
 
-     
+ 
+
+
 
   });
  

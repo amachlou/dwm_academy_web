@@ -10,7 +10,6 @@
 }
 
 
-
 .box
 {
     overflow: hidden;
@@ -30,12 +29,12 @@
     display: block;
 }
 
-
 h3
 {
     color: #fff;
     margin: 0 10px;
 }
+
 .box .box-content
 {
     position: absolute;

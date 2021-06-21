@@ -1,43 +1,52 @@
-
 .uk-overlay-default {
-    background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
 }
-.uk-overlay-primary{
-  background-color:#0f1a26b4 ;
+.uk-overlay-primary {
+  background-color: #0f1a26b4;
 }
-.uk-overlay-primary p{
+.uk-overlay-primary p {
   color: white !important;
 }
-.section-teacher{
+.section-teacher {
   background-color: var(--orange) !important;
 }
-.section-teacher button{
+.section-teacher button {
   background-color: white;
   color: var(--blue) !important;
 }
 
-.uk-heading-line>::after, .uk-heading-line>::before {
-  top: calc(45% - ((.2px + .05em)/ 2));
-
+.uk-heading-line > ::after,
+.uk-heading-line > ::before {
+  top: calc(45% - ((0.2px + 0.05em) / 2));
 }
-.white{
+.white {
   color: white !important;
 }
 
-
-.uk-tab>.uk-active>a {
-  color: var(--orange) !important;
-  border-bottom: 2px solid;
-  border-color:var(--orange);
+.uk-heading-line .uk-card img {
+  height: 80px;
+  width: 80px;
 }
+
+.teacher-list-container p {
+  font-weight: 700;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.video-container button {
+  font-weight: 700;
+}
+
 
 :root {
   /* Fonts */
-  --rubik:'Rubik', sans-serif;
+  --rubik: "Rubik", sans-serif;
 
   /* Colors */
-  --blue:#0f1a26;
-  --orange:#fc363b;
+  --blue: #0f1a26;
+  --orange: #fc363b;
 }
-
-

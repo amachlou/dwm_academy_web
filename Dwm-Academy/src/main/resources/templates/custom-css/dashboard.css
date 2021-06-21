@@ -11,6 +11,10 @@
    color: white !important;
 }
 
+.see-profile{
+  font-weight: 700;
+}
+
 .playlist-section{
   background-color: var(--blue);
 }
@@ -24,10 +28,19 @@
 }
 
 .active {
-background-color: rgb(94, 43, 214);
+background-color: var(--green);
 color: white;
 
 }
+
+.teacher-info img{
+height: 80px !important;
+width: 80px !important;
+}
+.uk-comment p{
+  font-weight: 400;
+}
+
 .video-section{
   background-color: var(--blue);
 }
@@ -66,6 +79,14 @@ color: white !important;
 margin-top: 0;
 }
 
+.uk-panel-scrollable {
+  min-height: 100%;
+  margin-left: 20px;
+}
+
+.categorie-list h5 {
+  margin: 20px;
+}
 
 
 :root {
@@ -75,13 +96,14 @@ margin-top: 0;
    /* Colors */
    --blue:#0f1a26;
    --orange:#fc363b;
+   --green:#1bb28c;
  }
 
- button.add-new{
+ a.add-new{
     background-color: var(--blue);
     color: var(--orange) !important;
  }
- button.add-new:hover{
+ a.add-new:hover{
    background-color: var(--blue);
    color: var(--orange) !important;
 }

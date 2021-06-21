@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home - Dwm Academy</title>
     <!-- ! UIKIT CSS -->
     <link rel="stylesheet" href="css/uikit.min.css" />
     <link rel="stylesheet" href="custom-css/home.css">
@@ -27,9 +27,8 @@
                     <a href="#" class="categories">CATEGORIES</a>
                     <div class="uk-navbar-dropdown uk-border-rounded uk-margin-xlarge-top">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Web Development</a></li>
                         </ul>
                     </div>
                 </li>
@@ -53,9 +52,8 @@
                     <img class="uk-border-circle uk-margin-small-top" width="50" height="50" src="images/t1.jpg">
                     <div class="uk-navbar-dropdown uk-border-rounded">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
+                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#">Logout</a></li>
                         </ul>
                     </div>
                 </li>
@@ -66,7 +64,7 @@
     <!-- ! MOBILE MENU -->
 
     <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
-        <div class="uk-offcanvas-bar uk-background-default">
+        <div class="uk-offcanvas-bar uk-hidden@m uk-background-default">
 
             <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
             <ul class="uk-nav uk-nav-default">
@@ -80,15 +78,11 @@
                     </form>
                 </li>
 
-                <li class="uk-parent">
-                    <a href="#" class="uk-text-bolder">My Courses</a>
-                </li>
-
-                <li class="uk-parent">
-                    <a href="#" class="uk-text-bolder">CATEGORIES</a>
+                <li class="uk-parent dropdown-category">
+                    <p href="#" class="uk-text-bolder">CATEGORIES</p>
                     <ul class="uk-nav-sub">
-                        <li><a href="#">Sub item</a></li>
-                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
                     </ul>
                 </li>
             </ul>
@@ -96,11 +90,11 @@
         </div>
     </div>
 
-     <!-- ! Welcome -->
+    <!-- ! Welcome -->
 
-     <div class="uk-container">
-        <h1 class="uk-heading-bullet uk-padding uk-padding-remove-left">Welcome Back <span class="username">Abdo</span>
-        </h1>
+    <div class="uk-container">
+        <h2 class="uk-padding uk-padding-remove-left">Welcome Back <span class="username">Abdo</span>
+        </h2>
     </div>
 
 
@@ -110,132 +104,119 @@
         <div class="uk-slider-container-offset" uk-slider>
             <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-                <ul class="uk-slider-items uk-child-width-1-2@s uk-grid my-courses">
+                <ul class="uk-slider-items uk-child-width-1-2@m uk-grid my-courses">
                     <li>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                        <div class="my-courses uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded uk-grid-collapse uk-child-width-1-2@l uk-child-width-1-2@s uk-margin"
+                            uk-grid>
 
-                            <div class="uk-card-media-left uk-cover-container uk-border-rounded">
-                                <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
-                                <canvas width="600" height="400"></canvas>
+                            <div class="uk-card-media-left uk-border-rounded uk-cover-container">
+                                <img src="images/t1.jpg" class="uk-border-rounded" alt="" uk-cover>
+                                <canvas width="400" height="200"></canvas>
                             </div>
 
-                            <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                <span uk-icon="more" class="uk-float-right"></span>
-                                <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                            <div class="uk-card-body uk-padding-remove uk-flex uk-flex-column uk-flex-between">
+                                <span uk-icon="more" class="uk-text-right"></span>
+                                <div uk-dropdown="pos: right-top"
+                                    class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
                                     <ul class="uk-nav uk-dropdown-nav">
                                         <li><a href="#">Hide</a></li>
                                         <li><a href="#">Delete</a></li>
+                                        <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a>Add to my list</a></li>
                                     </ul>
                                 </div>
-                                <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Iste, a?</h3>
+
+
                                 <div class="uk-flex uk-flex-between">
                                     <p>john wilberg</p><span>6h 18m</span>
                                 </div>
+                                <h5 class="">Lorem ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    adipisicing elit. Iste, a?</h5>
+
+                                <p
+                                    class="enroll uk-text-small uk-flex-wrap-top uk-text-light uk-text-center uk-margin-remove">
+                                    <span>40</span>
+                                    student
+                                </p>
 
                             </div>
 
                         </div>
                     </li>
                     <li>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                        <div class="my-courses uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded uk-grid-collapse uk-child-width-1-2@l uk-child-width-1-2@s uk-margin"
+                            uk-grid>
 
-                            <div class="uk-card-media-left uk-cover-container uk-border-rounded">
-                                <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
-                                <canvas width="600" height="400"></canvas>
+                            <div class="uk-card-media-left uk-border-rounded uk-cover-container">
+                                <img src="images/t1.jpg" class="uk-border-rounded" alt="" uk-cover>
+                                <canvas width="400" height="200"></canvas>
                             </div>
 
-                            <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                <span uk-icon="more" class="uk-float-right"></span>
-                                <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                            <div class="uk-card-body uk-padding-remove uk-flex uk-flex-column uk-flex-between">
+                                <span uk-icon="more" class="uk-text-right"></span>
+                                <div uk-dropdown="pos: right-top"
+                                    class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
                                     <ul class="uk-nav uk-dropdown-nav">
                                         <li><a href="#">Hide</a></li>
                                         <li><a href="#">Delete</a></li>
+                                        <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a>Add to my list</a></li>
                                     </ul>
                                 </div>
-                                <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Iste, a?</h3>
+
+
                                 <div class="uk-flex uk-flex-between">
                                     <p>john wilberg</p><span>6h 18m</span>
                                 </div>
+                                <h5 class="">Lorem ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    adipisicing elit. Iste, a?</h5>
+
+                                <p
+                                    class="enroll uk-text-small uk-flex-wrap-top uk-text-light uk-text-center uk-margin-remove">
+                                    <span>40</span>
+                                    student
+                                </p>
 
                             </div>
 
                         </div>
                     </li>
                     <li>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                        <div class="my-courses uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded uk-grid-collapse uk-child-width-1-2@l uk-child-width-1-2@s uk-margin"
+                            uk-grid>
 
-                            <div class="uk-card-media-left uk-cover-container uk-border-rounded">
-                                <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
-                                <canvas width="600" height="400"></canvas>
+                            <div class="uk-card-media-left uk-border-rounded uk-cover-container">
+                                <img src="images/t1.jpg" class="uk-border-rounded" alt="" uk-cover>
+                                <canvas width="400" height="200"></canvas>
                             </div>
 
-                            <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                <span uk-icon="more" class="uk-float-right"></span>
-                                <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
+                            <div class="uk-card-body uk-padding-remove uk-flex uk-flex-column uk-flex-between">
+                                <span uk-icon="more" class="uk-text-right"></span>
+                                <div uk-dropdown="pos: right-top"
+                                    class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
                                     <ul class="uk-nav uk-dropdown-nav">
                                         <li><a href="#">Hide</a></li>
                                         <li><a href="#">Delete</a></li>
+                                        <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a>Add to my list</a></li>
                                     </ul>
                                 </div>
-                                <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Iste, a?</h3>
+
+
                                 <div class="uk-flex uk-flex-between">
                                     <p>john wilberg</p><span>6h 18m</span>
                                 </div>
+                                <h5 class="">Lorem ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    adipisicing elit. Iste, a?</h5>
 
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-
-                            <div class="uk-card-media-left uk-cover-container uk-border-rounded">
-                                <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
-                                <canvas width="600" height="400"></canvas>
-                            </div>
-
-                            <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                <span uk-icon="more" class="uk-float-right"></span>
-                                <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
-                                    <ul class="uk-nav uk-dropdown-nav">
-                                        <li><a href="#">Hide</a></li>
-                                        <li><a href="#">Delete</a></li>
-                                    </ul>
-                                </div>
-                                <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Iste, a?</h3>
-                                <div class="uk-flex uk-flex-between">
-                                    <p>john wilberg</p><span>6h 18m</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-
-                            <div class="uk-card-media-left uk-cover-container uk-border-rounded">
-                                <img src="images/team-meeting-full-of-happy-young-adults.jpg" alt="" uk-cover>
-                                <canvas width="600" height="400"></canvas>
-                            </div>
-
-                            <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                <span uk-icon="more" class="uk-float-right"></span>
-                                <div uk-dropdown class="uk-padding-remove-vertical uk-border-rounded">
-                                    <ul class="uk-nav uk-dropdown-nav">
-                                        <li><a href="#">Hide</a></li>
-                                        <li><a href="#">Delete</a></li>
-                                    </ul>
-                                </div>
-                                <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Iste, a?</h3>
-                                <div class="uk-flex uk-flex-between">
-                                    <p>john wilberg</p><span>6h 18m</span>
-                                </div>
+                                <p
+                                    class="enroll uk-text-small uk-flex-wrap-top uk-text-light uk-text-center uk-margin-remove">
+                                    <span>40</span>
+                                    student
+                                </p>
 
                             </div>
 
@@ -243,10 +224,10 @@
                     </li>
                 </ul>
 
-                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-                    uk-slider-item="previous"></a>
-                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-                    uk-slider-item="next"></a>
+                <a class="uk-position-center-left uk-position-small uk-slidenav-large uk-hidden-hover" href="#"
+                    uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-slidenav-large uk-hidden-hover" href="#"
+                    uk-slidenav-next uk-slider-item="next"></a>
 
             </div>
 
@@ -254,339 +235,731 @@
         </div>
     </div>
 
-
     <!-- ! CATEGORIES SLIDER -->
 
-    <div class="uk-container">
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container">
 
-        <h1 class="uk-text-left">CATEGORIES</h1>
+            <h2 class="uk-text-center">CATEGORIES</h2>
 
-        <ul class="uk-flex-center"
-            uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium" uk-tab>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-        </ul>
+            <ul class="uk-flex-center"
+                uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium" uk-tab>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+            </ul>
 
-        <ul class="uk-switcher uk-margin category">
-            <li>
-                <div class="uk-slider-container-offset" uk-slider>
+            <ul class="uk-switcher uk-margin category">
+                <li>
+                    <div class="uk-slider-container-offset" uk-slider>
 
-                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-                        <ul class="uk-slider-items uk-child-width-1-3@m uk-child-width-1-2@s uk-grid">
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                            <ul class="uk-slider-items uk-child-width-1-3@m uk-child-width-1-2@s uk-grid">
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                                
+                            </ul>
 
-                        <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
-                            uk-slidenav-previous uk-slider-item="previous"></a>
-                        <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#" uk-slidenav-next
-                            uk-slider-item="next"></a>
+                            <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-next uk-slider-item="next"></a>
+
+                        </div>
 
                     </div>
+                </li>
+                <li>
+                    <div class="uk-slider-container-offset" uk-slider>
 
-                </div>
-            </li>
-            <li>
-                <div class="uk-slider-container-offset" uk-slider>
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
-
-                        <ul class="uk-slider-items uk-child-width-1-3@s uk-grid">
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid">
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
 
-                        <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
-                            uk-slidenav-previous uk-slider-item="previous"></a>
-                        <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#" uk-slidenav-next
-                            uk-slider-item="next"></a>
+                            <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-next uk-slider-item="next"></a>
+
+                        </div>
+
 
                     </div>
+                </li>
+                <li>
+                    <div class="uk-slider-container-offset" uk-slider>
 
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-                </div>
-            </li>
-            <li>
-                <div class="uk-slider-container-offset" uk-slider>
-
-                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
-
-                        <ul class="uk-slider-items uk-child-width-1-3@s uk-grid">
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid">
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img class="uk-border-rounded"
-                                            src="images/team-meeting-full-of-happy-young-adults.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body uk-padding-remove uk-border-rounded">
-                                        <h3 class="" style="color: black !important;">Lorem ipsum dolor sit amet
-                                            consectetur
-                                            adipisicing elit. Iste, a?</h3>
-                                        <div class="uk-flex uk-flex-between">
-                                            <p>john wilberg</p><span>6h 18m</span>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" src="images/t1.jpg" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+                                                    
+                                                        <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                                                        
+                                                    
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})"><a >Add to my list</a></li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
 
-                        <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
-                            uk-slidenav-previous uk-slider-item="previous"></a>
-                        <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#" uk-slidenav-next
-                            uk-slider-item="next"></a>
+                            <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-next uk-slider-item="next"></a>
+
+                        </div>
+
 
                     </div>
+                </li>
+            </ul>
 
-
-                </div>
-            </li>
-        </ul>
-
+        </div>
     </div>
-
 
     <!-- ! Recommended COURSES -->
 
     <div class="uk-section overview">
         <div class="uk-container">
-            <h1 class="uk-text-left uk-padding uk-padding-remove-top uk-padding-remove-left">Recommended Courses</h1>
+            <h2 class="uk-text-left uk-padding uk-padding-remove-top uk-padding-remove-left">Recommended Courses</h2>
         </div>
 
         <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1" uk-slideshow="animation: push">
@@ -601,11 +974,14 @@
                     <div class="uk-position-center uk-overlay uk-border-rounded uk-overlay-default uk-position-medium ">
 
                         <div uk-slideshow-parallax="scale: 1,1,0.8" class="">
-                            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+                            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
                             <div class="uk-flex uk-flex-between">
                                 <p>john wilberg</p><span>6h 18m</span>
                             </div>
-                            <button class="uk-button uk-button-default uk-border-rounded">Enroll now</button>
+                            <div class="uk-flex uk-flex-between">
+                                <button class="uk-button uk-button-default uk-border-rounded">Enroll now</button>
+                                <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                            </div>
 
                         </div>
 
@@ -624,7 +1000,10 @@
                             <div class="uk-flex uk-flex-between">
                                 <p>john wilberg</p><span>6h 18m</span>
                             </div>
-                            <button class="uk-button uk-button-default uk-border-rounded">Enroll now</button>
+                            <div class="uk-flex uk-flex-between">
+                                <button class="uk-button uk-button-default uk-border-rounded">Enroll now</button>
+                                <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                            </div>
 
                         </div>
 
@@ -643,7 +1022,10 @@
                             <div class="uk-flex uk-flex-between">
                                 <p>john wilberg</p><span>6h 18m</span>
                             </div>
-                            <button class="uk-button uk-button-default uk-border-rounded">Enroll now</button>
+                            <div class="uk-flex uk-flex-between">
+                                <button class="uk-button uk-button-default uk-border-rounded">Enroll now</button>
+                                <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong> student</span>
+                            </div>
 
                         </div>
 
@@ -651,9 +1033,9 @@
                 </li>
             </ul>
 
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+            <a class="uk-position-center-left uk-slidenav-large uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
                 uk-slideshow-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+            <a class="uk-position-center-right uk-slidenav-large uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
                 uk-slideshow-item="next"></a>
 
         </div>
@@ -664,9 +1046,9 @@
 
     <!-- ! Popular Teachers -->
 
-    <div class="uk-section uk-section-default">
+    <div class="uk-section popular-teacher uk-section-default">
         <div class="uk-container">
-            <h1 class="uk-text-left">Popular Teachers</h1>
+            <h2 class="uk-text-left uk-margin-medium-bottom">Popular Teachers</h2>
 
             <div class="uk-slider-container-offset" uk-slider>
 
@@ -735,15 +1117,12 @@
                         </li>
                     </ul>
 
-                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                    <a class="uk-position-center-left uk-slidenav-large uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
                         uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    <a class="uk-position-center-right uk-slidenav-large uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
                         uk-slider-item="next"></a>
 
                 </div>
-
-                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
-
             </div>
         </div>
     </div>
@@ -756,7 +1135,7 @@
     <div class="uk-section section-teacher uk-section-muted uk-dark">
         <div class="uk-container">
 
-            <h1 class="uk-text-left">Popular Topics</h1>
+            <h2 class="uk-text-left uk-margin-medium-bottom">Popular Topics</h2>
             <ul uk-accordion="multiple: true">
                 <li class="uk-open">
                     <a class="uk-accordion-title" href="#">Web Development</a>
@@ -875,16 +1254,16 @@
                     <h4>CATEGORIES</h4>
                     <ul class="uk-list">
                         <a href="">
-                            <li>List item 1</li>
+                            List item 1
                         </a>
                         <a href="">
-                            <li>List item 1</li>
+                            List item 1
                         </a>
                         <a href="">
-                            <li>List item 1</li>
+                            List item 1
                         </a>
                         <a href="">
-                            <li>More...</li>
+                            More...
                         </a>
                     </ul>
                 </div>
@@ -908,11 +1287,11 @@
                 </div>
 
 
-                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img src="images/logo.png" height="100"
+                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img src="/images/logo.png" height="100"
                         width="100" alt=""></a>
 
             </div>
-            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 E.academy.</p>
+            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 Dwm Academy.</p>
         </div>
     </footer>
 
@@ -920,6 +1299,7 @@
 
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
