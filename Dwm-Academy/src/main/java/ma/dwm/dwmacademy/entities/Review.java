@@ -26,6 +26,6 @@ public class Review extends BaseEntity {
 	private Date date;
 	
 	@OneToOne
-	private Student student;
+	private User student;
 	
 }

@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
-import ma.dwm.dwmacademy.repositories.IInstructorRepository;
+import ma.dwm.dwmacademy.repositories.IUserRepository;
+import ma.dwm.dwmacademy.utils.UserType;
 
 @Controller
 @CrossOrigin("*")
@@ -17,17 +18,17 @@ public class ApplicationController {
 	@Autowired
 	private ICategoryRepository categoryRepository;
 	@Autowired
-	private IInstructorRepository instructorRepository;
+	private IUserRepository userRepository;
 	@Autowired
 	private ICourseRepository courseRepository;
 	
 	@GetMapping("/")
 	public String getWelcomePage(Model model) {
-		model.addAttribute("categories", categoryRepository.findAll());
-		model.addAttribute("instructors", instructorRepository.findAll());
+		model.addAttribute("best_categories", categoryRepository.getBestCategories());
+		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
 		model.addAttribute("test", "Welcome Sweet Jiji");
 		return "index";
 	}
-
+	
 }

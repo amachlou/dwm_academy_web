@@ -12,7 +12,7 @@ import lombok.Data;
 public class StudentCourse extends BaseEntity {
 
 	@ManyToOne
-	private Student student;
+	private User student;
 	@ManyToOne
 	private Course course;
 

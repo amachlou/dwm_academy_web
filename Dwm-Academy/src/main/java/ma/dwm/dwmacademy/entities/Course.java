@@ -29,13 +29,13 @@ public class Course extends BaseEntity {
 	private Date date;
 	
 	@ManyToOne
-	private Admin admin;
+	private User admin;
 	@OneToMany(mappedBy = "course")
 	private List<Content> list_contents;
 	@ManyToOne
 	private Category category;
 	@ManyToOne
-	private Instructor instructor;
+	private User teacher;
 	
 	@OneToMany(mappedBy = "course")
 	private List<StudentCourse> list_student_courses;

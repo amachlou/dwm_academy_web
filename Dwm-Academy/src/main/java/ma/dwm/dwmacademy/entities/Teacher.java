@@ -9,13 +9,10 @@
 //import lombok.Data;
 //
 //@Entity
-//@Table(name = "STUDENTS")
+//@Table(name = "TEACHERS")
 //@Data //@NoArgsConstructor @AllArgsConstructor
-//public class Student extends User {
+//public class Teacher extends User {
 //	
-//	@OneToMany(mappedBy = "student")
-//	private List<Review> list_reviews;
-//	@OneToMany(mappedBy = "student")
-//	private List<StudentCourse> list_student_courses;
+//	
 //
 //}
