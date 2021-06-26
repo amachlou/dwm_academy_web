@@ -17,7 +17,7 @@
     <!-- ! NAVBAR -->
 	
 	<div>
-		<!-- <th:block th:replace="fragments/nav :: nav"></th:block> -->
+		<!-- <!-- <th:block th:replace="fragments/nav :: nav"></th:block> --> -->
 	</div>
 	
     <nav class="uk-navbar" uk-navbar>
@@ -1027,17 +1027,9 @@
                 <div>
                     <h4>CATEGORIES</h4>
                     <ul class="uk-list">
+                        <a th:each="category:${best_categories}" th:text="${category.name}" th:href="000"></a>
                         <a href="">
-                            List item 1
-                        </a>
-                        <a href="">
-                            List item 1
-                        </a>
-                        <a href="">
-                            List item 1
-                        </a>
-                        <a href="">
-                            More...
+                            Show more
                         </a>
                     </ul>
                 </div>
