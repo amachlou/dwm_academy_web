@@ -177,6 +177,11 @@ footer p {
   font-weight: 400;
 }
 
+.current .uk-card{
+  cursor: auto;
+}
+
+
 ::selection {
   background-color: var(--orange) !important;
   color: var(--blue);
