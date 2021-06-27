@@ -109,6 +109,27 @@ h2 {
   color: var(--green);
   
 }
+
+.hero-btn{
+  background-color: var(--orange) !important;
+  font-family: var(--raluay) !important;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+
+.sign-form input{
+  background-color: #F8F8F8;
+}
+
+.sign-form select{
+  background-color: #F8F8F8;
+}
+
+.hero-btn:hover{
+  background-color:#f12e35 !important;
+}
+
 .uk-navbar a {
   color: white !important;
 }
@@ -142,8 +163,11 @@ span {
 
 .overview button {
   background-color: var(--blue) !important;
+  
+}
+.overview button a{
   color: var(--orange) !important;
-  font-family: var(--raluay);
+
 }
 
 span.username {
@@ -176,11 +200,13 @@ footer p {
   color: var(--orange) !important;
   font-weight: 400;
 }
+.green{
+  color: var(--green) !important;
+}
 
 .current .uk-card{
   cursor: auto;
 }
-
 
 ::selection {
   background-color: var(--orange) !important;

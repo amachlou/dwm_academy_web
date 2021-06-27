@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ! UIKIT CSS -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="custom-css/dashboard.css">
+    <link rel="stylesheet" href="custom-css/global.css">
+
+</head>
+
+<body class="body">
+
+    <!-- ! NAVBAR -->
+
+    <nav class="uk-navbar" uk-navbar>
+        <div class="uk-navbar-left uk-width-*">
+            <ul class="uk-navbar-nav uk-visible@m">
+                <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img src="/images/logo.png"
+                            height="80" width="80" alt=""></a></li>
+                <li>
+                    <a href="#" class="categories">CATEGORIES</a>
+                    <div class="uk-navbar-dropdown uk-width-medium uk-border-rounded uk-margin-xlarge-top">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a class="uk-text-truncate" href="#">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit.</a></li>
+                            <li><a class="uk-text-truncate" href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="uk-margin uk-margin-large-left">
+                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-* search-form">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input uk-border-rounded search-value" type="search"
+                            placeholder="Search">
+                    </form>
+                </li>
+            </ul>
+            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
+                uk-toggle="target: #offcanvas-overlay"></a>
+            <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img src="/images/logo.png"
+                    height="80" width="80" alt=""></a>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <li><a href="#" class="signup-btn">Signup</a></li>
+                <li><a href="#" class="login signin-btn">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- ! MOBILE MENU -->
+
+    <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar uk-hidden@m uk-background-default">
+
+            <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-default">
+                <li class="uk-active uk-text-large"><a href="#">Menu</a></li>
+
+                <li class="uk-margin">
+                    <form class="uk-search uk-search-default uk-width-medium search-form uk-child-width-*">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input uk-border-rounded search-value" type="search"
+                            placeholder="Search">
+                    </form>
+                </li>
+
+                <li class="uk-parent dropdown-category">
+                    <p href="#" class="uk-text-bolder">CATEGORIES</p>
+                    <ul class="uk-nav-sub">
+                        <li><a class="uk-text-truncate" href="#">Web Development</a></li>
+                        <li><a class="uk-text-truncate" href="#">Lorem ipsum dolor sit amet.</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- ! Sign-container -->
+
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container">
+
+            <div class="uk-text-center" uk-grid>
+                <div class="uk-width-1-2@m uk-align-center  uk-border-rounded uk-margin-large-bottom">
+                    <div class="uk-dark uk-padding uk-background-default signup-container uk-box-shadow-medium uk-border-rounded">
+                        <h2>Join DWM Academy for Free</h2>
+                        <p>Get started now</p>
+
+                        <form class="uk-grid-small sign-form" uk-grid>
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="first" type="text"
+                                        placeholder="First name">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="last" type="text"
+                                        placeholder="Last name">
+                                </div>
+                            </div>
+
+                            <div class="uk-width-1-1">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="email" type="email"
+                                        placeholder="Email address">
+                                </div>
+                            </div>
+
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="new-pass confirm-new-pass" type="text"
+                                        placeholder="Create password">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" type="text"
+                                        placeholder="Comfirme password">
+                                </div>
+                            </div>
+
+                            <div class="uk-width-1-2@s">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="date" type="date"
+                                        placeholder="Date of birth">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-2@s">
+                                <select class="uk-select uk-border-rounded" id="category">
+                                    <option>Select account type</option>
+                                    <option>Option 02</option>
+                                </select>
+                            </div>
+                            <div class="uk-width-1-2@s">
+
+                                <label class="uk-margin-medium-right"><input class="uk-radio" type="radio" name="radio2"
+                                        checked>Male</label>
+                                <label><input class="uk-radio" type="radio" name="radio2">Female</label>
+
+                            </div>
+
+                            <div class="uk-width-1-1@s uk-align-center">
+                                <button
+                                    class="uk-button uk-button-default uk-width-1-1 hero-btn uk-margin-small-top uk-text-capitalize uk-border-rounded">Sign
+                                    Up</button>
+                                <hr>
+                            </div>
+                            <p class="uk-text-normal uk-margin-remove">Already a member? <a
+                                    class="uk-text-bold green signin-btn">Sign in</a></p>
+                        </form>
+
+                    </div>
+
+                    <div
+                    class="uk-dark uk-padding uk-background-default uk-box-shadow-medium signin-container uk-border-rounded uk-hidden">
+                    <h2>Welcome Back to DWM Academy</h2>
+                    <p>Sign in to continue to your account.</p>
+    
+                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid>
+                        <div class="uk-width-1-1@s">
+                            <div class="uk-margin">
+                                <div class="uk-inline uk-width-1-2@s">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
+                                    <input class="uk-input uk-border-rounded" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-1@s">
+                            <div class="uk-margin">
+                                <div class="uk-inline uk-width-1-2@s">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                    <input class="uk-input uk-border-rounded" type="password">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="uk-width-1-1@s uk-align-center">
+                            <button
+                                class="uk-button uk-button-default uk-width-1-2 hero-btn uk-margin-small-top uk-text-capitalize uk-border-rounded">Sign
+                                Up</button>
+                            <hr>
+                        </div>
+                        <p class="uk-text-normal uk-margin-remove">Not a member yet? <a
+                                class="uk-text-bold green signup-btn">Sign
+                                up</a></p>
+                    </form>
+    
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ! FOOTER -->
+
+    <footer id="page-footer" class="" uk-sticky>
+        <div class="uk-container uk-padding-small">
+            <div class="uk-child-width-expand@s" uk-grid>
+
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <ul class="uk-list">
+                        <a href="">
+                            List item 1
+                        </a>
+                        <a href="">
+                            List item 1
+                        </a>
+                        <a href="">
+                            List item 1
+                        </a>
+                        <a href="">
+                            More...
+                        </a>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul class="uk-list">
+                        <a uk-icon="icon: facebook" href=""></a>
+                        <a uk-icon="icon: youtube" href=""></a>
+                        <a uk-icon="icon: instagram" href=""></a>
+                        <a uk-icon="icon: github" href=""></a>
+
+                    </ul>
+                </div>
+
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+
+
+                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img src="/images/logo.png" height="100"
+                        width="100" alt=""></a>
+
+            </div>
+            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 Dwm Academy.</p>
+        </div>
+    </footer>
+
+    <!-- ! UIKIT JS -->
+
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

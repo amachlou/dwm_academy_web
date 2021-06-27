@@ -107,6 +107,27 @@ $( document ).ready(function() {
         
     });
 
+    //! Modal Switch
+
+    const signinBtn=$('.signin-btn');
+    const signupBtn=$('.signup-btn');
+
+    const signupContainer=$('.signup-container');
+    const signinContainer=$('.signin-container');
+
+
+    $(signinBtn).on('click',()=>{
+        signinContainer.removeClass('uk-hidden');
+        signupContainer.addClass('uk-hidden');
+        console.log('clicked');
+    });
+
+    $(signupBtn).on('click',()=>{
+      signupContainer.removeClass('uk-hidden');
+      signinContainer.addClass('uk-hidden');
+      console.log('clicked');
+ 
+    });
 
  
 

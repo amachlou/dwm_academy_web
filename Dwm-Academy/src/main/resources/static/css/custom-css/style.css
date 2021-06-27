@@ -45,7 +45,7 @@ html, body {
 :root {
   /* Fonts */
   --rubik: "Rubik", sans-serif;
-
+ --green:#1bb28c;
   /* Colors */
   --blue: #0f1a26;
   --orange: #fc363b;
