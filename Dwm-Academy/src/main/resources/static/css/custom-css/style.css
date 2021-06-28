@@ -14,6 +14,9 @@
   background-color: white;
   color: var(--blue) !important;
 }
+.testmonial-section .uk-card{
+  cursor: auto;
+}
 
 .uk-heading-line > ::after,
 .uk-heading-line > ::before {
@@ -28,9 +31,6 @@
   width: 80px;
 }
 
-.teacher-list-container p {
-  font-weight: 700;
-}
 
 html, body {
   max-width: 100%;

@@ -29,7 +29,7 @@ $( document ).ready(function() {
         addContentContainer.addClass('uk-hidden');
         contentContainer.addClass('uk-hidden');
         contentForm.removeClass('uk-hidden');
-        UIkit.switcher('.dashboard-tab').show(1);  
+        UIkit.switcher('.dashboard-tab').show(2);  
       });
 
       $(addContent2).on('click',()=>{
@@ -48,7 +48,6 @@ $( document ).ready(function() {
 
       const addContentTable=$('#add-content-table');
       
-
       const contentInfoContainer=$('#content-info-container');
       const contentTableContainer=$('#content-table-container');
 
@@ -68,8 +67,14 @@ $( document ).ready(function() {
         <td>${inputTitle}</td>
         <td>${inputUrl}</td>
         <td>${inputDuration}</td>
-        <td><button id="remove-content" class="uk-button uk-button-default" type="button">remove</button></td>
+        <td><a uk-icon="icon: trash;" id="remove-content"
+                class="uk-text-danger uk-align-right"></a></td>
     </tr>`);
+// todo
+        inputTitle=$('#title-content').val('');
+        inputDuration=$('#duration-content').val('');
+        inputUrl=$('#video').val('');
+
       });
    
       $(document).on('click','#remove-content',()=>{
@@ -129,9 +134,53 @@ $( document ).ready(function() {
  
     });
 
- 
+    
+    // ! delete instructor element
 
+    const deleteBtn = $('.delete-btn');
+
+    const instructorElement=$('#instructor-element');
+
+   
+    $(deleteBtn).on('click',()=>{
+      if($('.checkbox-table').is(':checked')){
+
+       $(instructorElement).remove();
+
+      }
+ 
+    });
+
+    
 
 
   });
  
+
+  function iconClick(e,id){
+
+    const approvedIcon = $('#approved-icon_'+id);
+    const disapprovedIcon = $('#disapproved-icon_'+id);
+
+    const permissionBtn=$('#permission-btn_'+id);
+
+    
+    $(approvedIcon).data('clicked',true);    
+    $(disapprovedIcon).data('clicked',true);
+
+    if($(disapprovedIcon).data('clicked')){
+      permissionBtn.html('Disapproved');
+    
+    }
+
+    else if($(approvedIcon).data('clicked')){
+      permissionBtn.html('Approved');
+    }
+
+
+    $(disapprovedIcon).remove();
+    $(approvedIcon).remove();
+
+  }
+   
+  

@@ -5,78 +5,100 @@
 .my-courses h3 {
   font-size: 1.3rem;
 }
- 
-.dashboard-tab.uk-subnav-pill>.uk-active>a {
-   background-color: var(--blue);
-   color: white !important;
+
+.dashboard-tab.uk-subnav-pill > .uk-active > a {
+  background-color: var(--blue);
+  color: white !important;
 }
 
-.see-profile{
+.teacher-info.uk-card{
+  cursor: auto;
+}
+
+.manage-teacher table .uk-button {
+  padding: 0 15px;
+  border: none;
+}
+
+.manage-teacher table .uk-button a {
+  padding-left: 8px;
+  
+}
+.manage-teacher a.profile-link {
+  color: var(--blue) !important;
+  
+}
+
+.manage-teacher table .uk-button a:hover {
+  opacity: .8;
+}
+.manage-teacher table .uk-button a svg{
+ height: 25px;
+ width: 25px;
+}
+
+.see-profile {
   font-weight: 700;
 }
 
-.playlist-section{
+.playlist-section {
   background-color: var(--blue);
 }
 
-.categorie-list li{
+.categorie-list li {
   padding: 10px;
   border-radius: 5px;
 }
-#video_player h2{
+#video_player h2 {
   color: var(--orange) !important;
 }
 
 .active {
-background-color: var(--green);
-color: white;
-
+  background-color: var(--green);
+  color: white;
 }
 
-.teacher-info img{
-height: 80px !important;
-width: 80px !important;
+.teacher-info img {
+  height: 80px !important;
+  width: 80px !important;
 }
-.uk-comment p{
+.uk-comment p {
   font-weight: 400;
 }
 
-.video-section{
+.video-section {
   background-color: var(--blue);
 }
-.categorie-list h5{
+.categorie-list h5 {
   color: white !important;
 }
 
-
-#video_player p span{
+#video_player p span {
   color: white !important;
 }
 
-
-#video_player p{
+#video_player p {
   color: white !important;
 }
 
 .uk-panel-scrollable {
-    border: none;
+  border: none;
 }
 
-.categorie-list li a{
-color: white !important;
+.categorie-list li a {
+  color: white !important;
 }
-.categorie-list li span{
+.categorie-list li span {
   color: white !important;
-  }
-  
+}
 
-.categorie-list li{
+.categorie-list li {
   color: white !important;
-  }
+}
 
 .categorie-list .uk-list > * > ul,
 .uk-list > :nth-child(n + 2) {
-margin-top: 0;
+  margin-top: 0;
 }
 
 .uk-panel-scrollable {
@@ -88,27 +110,25 @@ margin-top: 0;
   margin: 20px;
 }
 
-
 :root {
-   /* Fonts */
-   --rubik:'Rubik', sans-serif;
- 
-   /* Colors */
-   --blue:#0f1a26;
-   --orange:#fc363b;
-   --green:#1bb28c;
- }
+  /* Fonts */
+  --rubik: "Rubik", sans-serif;
 
- a.add-new{
-    background-color: var(--blue);
-    color: var(--orange) !important;
- }
- a.add-new:hover{
-   background-color: var(--blue);
-   color: var(--orange) !important;
+  /* Colors */
+  --blue: #0f1a26;
+  --orange: #fc363b;
+  --green: #1bb28c;
 }
 
-table button{
+a.add-new {
+  background-color: var(--blue);
+  color: var(--orange) !important;
+}
+a.add-new:hover {
+  background-color: var(--blue);
   color: var(--orange) !important;
 }
 
+table a {
+  color: var(--orange) !important;
+}
