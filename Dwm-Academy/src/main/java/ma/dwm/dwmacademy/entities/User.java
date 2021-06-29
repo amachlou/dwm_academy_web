@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,15 +21,27 @@ import ma.dwm.dwmacademy.utils.UserType;
 @Data @NoArgsConstructor @AllArgsConstructor
 public class User extends BaseEntity {
 	
+	@NotBlank(message = "First name is mandatory")
 	@Column(nullable = false, length = 50)
 	private String first_name;
+	
+	@NotBlank(message = "Last name is mandatory")
 	@Column(nullable = false, length = 50)
 	private String last_name;
+	
+	@NotBlank(message = "Email is mandatory")
+	@Email(message = "Email should be valid")
 	@Column(nullable = false, length = 100)
 	private String email;
+	
+	@NotBlank(message = "Date of birth is mandatory")
 	private Date date_birth;
+	
+	@NotBlank(message = "Password is mandatory")
 	@Column(nullable = false)
 	private String password;
+	
+	@NotBlank(message = "Type is mandatory")
 	@Enumerated
 	private UserType type;
 	
