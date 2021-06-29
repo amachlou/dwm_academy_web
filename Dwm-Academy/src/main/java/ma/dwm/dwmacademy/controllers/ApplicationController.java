@@ -29,7 +29,7 @@ public class ApplicationController {
 		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
 		model.addAttribute("test", "Welcome Sweet Jiji");
-		return "signup-page";
+		return "user-form";
 	}
 	
 	@GetMapping("/test/{uri}")
