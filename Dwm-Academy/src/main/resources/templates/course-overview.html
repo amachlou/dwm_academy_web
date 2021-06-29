@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>course title</title>
-    <script th:src="@{https://cdn.tiny.cloud/1/uupfvcqhkleheq3ho6aygpxrzsttp4ttzoj988u3az0ytr75/tinymce/5/tinymce.min.js}"
+    <script
+        th:src="@{https://cdn.tiny.cloud/1/uupfvcqhkleheq3ho6aygpxrzsttp4ttzoj988u3az0ytr75/tinymce/5/tinymce.min.js}"
         referrerpolicy="origin"></script>
+    <!-- ! video player -->
+    <link rel="stylesheet" th:href="@{https://cdn.plyr.io/3.6.8/plyr.css}" />
     <!-- ! UIKIT CSS -->
     <link th:href="@{https://cdn.quilljs.com/1.3.6/quill.snow.css}" rel="stylesheet">
 
@@ -21,10 +24,10 @@
 <body class="body">
 
     <!-- ! NAVBAR -->
-    
+
     <div>
-		<!-- <th:block th:replace="fragments/nav :: nav"></th:block> -->
-	</div>
+        <!-- <th:block th:replace="fragments/nav :: nav"></th:block> -->
+    </div>
 
     <!-- <nav class="uk-navbar" uk-navbar>
         <div class="uk-navbar-left">
@@ -110,14 +113,16 @@
                 <div id="video_player">
                     <h2>Html And CSS Video Gallery</h2>
                     <p><span>samantha parker</span> ,<span>web designer</span></p>
-                    <video controls poster="" class="video uk-border-rounded uk-width-1-1@m" id="video">
+                    
+                    <video id="player" poster="" class="video uk-border-rounded uk-width-1-1@m" playsinline controls
+                        data-poster="images/t1.jpg">
                         <source th:src="@{videos/overwiew.mp4}" type="video/mp4">
                         <source th:src="@{videos/overwiew.mp4}" type="video/mp4">
+
                     </video>
                 </div>
             </div>
-            <div
-                class="uk-margin-large-right uk-width-1-4@m uk-margin-large-top uk-margin-large-bottom categorie-list">
+            <div class="uk-margin-large-right uk-width-1-4@m uk-margin-large-top uk-margin-large-bottom categorie-list">
                 <h5>30 Lessons (12h 20m)</h5>
                 <div class="uk-panel-scrollable" id="categorie-list">
                     <ul class="uk-list">
@@ -263,7 +268,7 @@
                             <article class="uk-article">
                                 <h3>Article title</h3>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                - <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                                     nostrud exercitation ullamco laboris nisi ut aliquip.</p>
 
@@ -287,8 +292,8 @@
                                 <header class="uk-comment-header">
                                     <div class="uk-grid-medium uk-flex-middle" uk-grid>
                                         <div class="uk-width-auto">
-                                            <img class="uk-comment-avatar uk-border-circle" th:src="@{images/default-picture.png}"
-                                                width="80" height="80" alt="">
+                                            <img class="uk-comment-avatar uk-border-circle"
+                                                th:src="@{images/default-picture.png}" width="80" height="80" alt="">
                                         </div>
                                         <div class="uk-width-expand">
                                             <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
@@ -696,7 +701,7 @@
         </div>
     </footer>
 
-<th:block th:replace="~{fragments/nav.html :: TT}" ></th:block>
+    <th:block th:replace="~{fragments/nav.html :: TT}"></th:block>
     <!-- ! UIKIT JS -->
     <!-- <script th:src="@{js/uikit/uikit.min.js}"></script>
     <script th:src="@{js/uikit/uikit-icons.min.js}"></script>

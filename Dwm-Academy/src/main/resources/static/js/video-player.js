@@ -8,7 +8,7 @@ function handler(e) {
     e.preventDefault();
     let videotarget = this.getAttribute("href");
     let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
-    let video = document.getElementById("video");
+    let video = document.getElementById("player");
     video.removeAttribute("poster");
     let source = document.querySelectorAll("#video_player video source");
     source[0].src = filename + ".mp4";

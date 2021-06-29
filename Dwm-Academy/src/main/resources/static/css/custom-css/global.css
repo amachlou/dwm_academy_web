@@ -96,38 +96,46 @@ h2 {
   border-color: var(--orange);
 }
 
-.uk-notification-message{
+.uk-notification-message {
   font-family: var(--rubik);
   font-weight: 400;
   color: var(--green);
   border-radius: 5px;
 }
 
-.uk-notification-message svg{
+.uk-notification-message svg {
   font-family: var(--rubik);
   font-weight: 400;
   color: var(--green);
-  
 }
 
-.hero-btn{
+.plyr__control--overlaid {
+  background-color: var(--orange);
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded="true"] {
+  background-color: var(--orange);
+}
+
+.hero-btn {
   background-color: var(--orange) !important;
   font-family: var(--raluay) !important;
   font-weight: 700;
   font-size: 1.2rem;
 }
 
-
-.sign-form input{
-  background-color: #F8F8F8;
+.sign-form input {
+  background-color: #f8f8f8;
 }
 
-.sign-form select{
-  background-color: #F8F8F8;
+.sign-form select {
+  background-color: #f8f8f8;
 }
 
-.hero-btn:hover{
-  background-color:#f12e35 !important;
+.hero-btn:hover {
+  background-color: #f12e35 !important;
 }
 
 .uk-navbar a {
@@ -163,11 +171,9 @@ span {
 
 .overview button {
   background-color: var(--blue) !important;
-  
 }
-.overview button a{
+.overview button a {
   color: var(--orange) !important;
-
 }
 
 span.username {
@@ -200,11 +206,11 @@ footer p {
   color: var(--orange) !important;
   font-weight: 400;
 }
-.green{
+.green {
   color: var(--green) !important;
 }
 
-.current .uk-card{
+.current .uk-card {
   cursor: auto;
 }
 
@@ -220,5 +226,5 @@ footer p {
   /* Colors */
   --blue: #0f1a26;
   --orange: #fc363b;
-  --green:#1bb28c;
+  --green: #1bb28c;
 }
