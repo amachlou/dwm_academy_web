@@ -20,6 +20,7 @@ public class Category extends BaseEntity {
 	
 	@Column(nullable = false)
 	private String name;
+	private String photo;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "category")

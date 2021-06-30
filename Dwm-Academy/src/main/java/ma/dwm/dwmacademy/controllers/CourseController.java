@@ -16,13 +16,13 @@ import ma.dwm.dwmacademy.repositories.ICourseRepository;
 
 
 @Controller
-@RequestMapping(path = "/web/courses")
+//@RequestMapping(path = "/web/courses")
 public class CourseController {
 	
 	@Autowired
 	private ICourseRepository courseRepository;
 	
-	@GetMapping("/courses")
+	@GetMapping("/web/courses")
 	public String getAll(Model model){
 		model.addAttribute("courses", courseRepository.findAll());
 		return "course-overview";

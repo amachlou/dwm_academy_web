@@ -8,8 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,16 +38,24 @@ public class User extends BaseEntity {
 	@Column(nullable = false, length = 100)
 	private String email;
 	
-	@NotBlank(message = "Date of birth is mandatory")
+//	@NotBlank(message = "Date of birth is mandatory")
+	@Temporal(TemporalType.DATE)
 	private Date date_birth;
-	
+
 	@NotBlank(message = "Password is mandatory")
 	@Column(nullable = false)
 	private String password;
 	
-	@NotBlank(message = "Type is mandatory")
+	@NotBlank(message = "Password confirmation is mandatory")
+	@Column(nullable = false)
+	@Transient
+	private String confirm_password;
+	
+//	@NotEmpty(message = "Type is mandatory")
 	@Enumerated
 	private UserType type;
+	
+	private String photo;
 	
 	// For teacher
 	@OneToMany(mappedBy = "teacher")

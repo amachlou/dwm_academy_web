@@ -27,6 +27,7 @@ public class Course extends BaseEntity {
 	private String description;
 	@Temporal(TemporalType.DATE)
 	private Date date;
+	private String photo;
 	
 	@ManyToOne
 	private User admin;
