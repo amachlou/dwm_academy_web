@@ -6,14 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dwm Academy - E-learning platform</title>
+    
     <!-- ! UIKIT CSS -->
-    <link rel="stylesheet" th:href="@{css/uikit/uikit.min.css}" />
     <link rel="stylesheet" th:href="@{css/custom-css/style.css}">
-    <link rel="stylesheet" th:href="@{css/custom-css/global.css}">
+    <link rel="stylesheet" th:href="@{css/uikit/uikit.min.css}" />
+	<link rel="stylesheet" th:href="@{css/custom-css/video-player.css}">
+	<link rel="stylesheet" th:href="@{css/custom-css/dashboard.css}">
+	<link rel="stylesheet" th:href="@{css/custom-css/global.css}">
 </head>
 
 <body class="body">
 
+	<div>
+        <!-- <th:block th:replace="fragments/nav :: nav"></th:block> -->
+    </div>
+	
     <!-- ! NAVBAR -->
 
     <div>
@@ -1435,10 +1442,16 @@
 
     <!-- ! UIKIT JS -->
 
+    <!-- <script src="script.js"></script> -->
     <script th:src="@{js/uikit/uikit.min.js}"></script>
-    <script th:src="@{js/uikit/uikit-icons.min.js}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="script.js"></script>
+	<script th:src="@{js/uikit/uikit-icons.min.js}"></script>
+	
+	<script th:src="@{https://cdn.quilljs.com/1.3.6/quill.js}"></script>
+	<script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+	
+	<script th:src="@{js/video-player.js}"></script>
+	<script th:src="@{js/script.js}"></script>
+	
 </body>
 
 </html>

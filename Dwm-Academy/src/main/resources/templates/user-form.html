@@ -94,50 +94,54 @@
                         <h2>Join DWM Academy for Free</h2>
                         <p>Get started now</p>
 
-                        <form class="uk-grid-small sign-form" uk-grid method="post" action="#" th:action="@{/web/users/signup}">
+                        <form action="#" class="uk-grid-small sign-form" uk-grid method="post" th:action="@{/web/users/signup}" th:object="${user}">
+                        	
+							<!-- <span th:if="${#fields.hasErrors('first_name')}" th:errors="first_name" class="text-danger"></span>
+							<span th:if="${#fields.hasErrors('last_name')}" th:errors="last_name" class="text-danger"></span>
+							<span th:if="${#fields.hasErrors('password')}" th:errors="password" class="text-danger"></span>
+							<span th:if="${#fields.hasErrors('confirm_password')}" th:errors="*{confirm_password}" class="text-danger"></span>
+							<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span> -->
+                        	
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="first" type="text"
-                                        placeholder="First name">
+                                    <input class="uk-input uk-border-rounded" id="first_name" th:field="*{first_name}" type="text" placeholder="First name">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="last" type="text"
-                                        placeholder="Last name">
+                                    <input class="uk-input uk-border-rounded" id="last_name" th:field="*{last_name}" type="text" placeholder="Last name">
                                 </div>
                             </div>
 
                             <div class="uk-width-1-1">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="email" type="email"
-                                        placeholder="Email address">
+                                    <input class="uk-input uk-border-rounded" id="email" th:field="*{email}" type="email" placeholder="Email address">
                                 </div>
                             </div>
 
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="new-pass confirm-new-pass" type="text"
+                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" id="new-pass confirm-new-pass" type="text"
                                         placeholder="Create password">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" type="text"
+                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" name="confirm_password" th:field="*{confirm_password}" type="text"
                                         placeholder="Comfirme password">
                                 </div>
                             </div>
 
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="date" type="date"
+                                    <input class="uk-input uk-border-rounded" id="date_birth" name="date_birth" th:field="*{date_birth}" type="date"
                                         placeholder="Date of birth">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
-                                <select class="uk-select uk-border-rounded" id="category">
+                                <select class="uk-select uk-border-rounded" id="type" name="type" th:field="*{type}" th:each="user_type:${user_types}">
                                     <option>Select account type</option>
-                                    <option>Option 02</option>
+                                    <option th:text="${user_type}"></option>
                                 </select>
                             </div>
                             <div class="uk-width-1-2@s">
@@ -164,12 +168,12 @@
                     <h2>Welcome Back to DWM Academy</h2>
                     <p>Sign in to continue to your account.</p>
     
-                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" action="#" th:action="@{/web/users/signin}">
+                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" action="#" th:action="@{/web/users/signin}"  th:object="${user}">
                         <div class="uk-width-1-1@s">
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">
                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
-                                    <input class="uk-input uk-border-rounded" type="text">
+                                    <input class="uk-input uk-border-rounded" name="email" th:field="*{email}" type="text">
                                 </div>
                             </div>
                         </div>
@@ -177,7 +181,7 @@
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">
                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                    <input class="uk-input uk-border-rounded" type="password">
+                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" type="password">
                                 </div>
                             </div>
                         </div>
@@ -187,7 +191,7 @@
                             <hr>
                         </div>
                         <p class="uk-text-normal uk-margin-remove">Not a member yet? 
-                        	<a class="uk-text-bold green signup-btn">Sign up</a>
+                        	<a class="uk-text-bold green signup-btn">Sign in</a>
                        	</p>
                     </form>
     
