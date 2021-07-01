@@ -1,7 +1,7 @@
 <nav class="uk-navbar" uk-navbar xmlns:th="http://www.thymeleaf.org">
     <div class="uk-navbar-left uk-width-*">
         <ul class="uk-navbar-nav uk-visible@m">
-            <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img th:src="@{images/logo.png}"
+            <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img th:src="@{/images/logo.png}"
                         height="80" width="80" alt=""></a></li>
             <li>
                 <a href="#" class="categories">CATEGORIES</a>
@@ -21,7 +21,7 @@
         </ul>
         <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
             uk-toggle="target: #offcanvas-overlay"></a>
-        <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img th:src="@{images/logo.png}"
+        <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img th:src="@{/images/logo.png}"
                 height="80" width="80" alt=""></a>
     </div>
     <!-- If not logged in -->
@@ -38,7 +38,7 @@
             <li class="uk-margin-small-right"><a href="#">My Courses</a></li>
             <li>
                 <img class="uk-border-circle uk-margin-small-top" width="50" height="50"
-                    th:src="@{images/default-picture.png}">
+                    th:src="@{/images/default-picture.png}">
                 <div class="uk-navbar-dropdown uk-border-rounded">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="#">My Profile</a></li>

@@ -96,12 +96,6 @@
 
                         <form action="#" class="uk-grid-small sign-form" uk-grid method="post" th:action="@{/users/signup}" th:object="${user}">
                         	
-							<span th:if="${#fields.hasErrors('first_name')}" th:errors="first_name" class="text-danger"></span>
-							<span th:if="${#fields.hasErrors('last_name')}" th:errors="last_name" class="text-danger"></span>
-							<span th:if="${#fields.hasErrors('password')}" th:errors="password" class="text-danger"></span>
-							<span th:if="${#fields.hasErrors('confirm_password')}" th:errors="*{confirm_password}" class="text-danger"></span>
-							<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-                        	
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
                                     <input class="uk-input uk-border-rounded" id="first_name" th:field="*{first_name}" type="text" placeholder="First name">
@@ -139,9 +133,9 @@
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
-                                <select class="uk-select uk-border-rounded" id="type" th:field="*{type}" th:each="user_type:${user_types}">
+                                <select class="uk-select uk-border-rounded" id="type" th:field="*{type}">
                                     <option value="">Select account type</option>
-                                    <option th:value="${user_type}" th:text="${user_type}"></option>
+                                    <option  th:each="user_type:${user_types}"  th:value="${user_type}" th:text="${user_type}"></option>
                                 </select>
                             </div>
                             <div class="uk-width-1-2@s">
@@ -245,9 +239,15 @@
                 <div>
 
                 </div>
+                
+                <span th:if="${#fields.hasErrors('first_name')}" th:errors="first_name" class="text-danger"></span>
+				<span th:if="${#fields.hasErrors('last_name')}" th:errors="last_name" class="text-danger"></span>
+				<span th:if="${#fields.hasErrors('password')}" th:errors="password" class="text-danger"></span>
+				<span th:if="${#fields.hasErrors('confirm_password')}" th:errors="*{confirm_password}" class="text-danger"></span>
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
 
 
-                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img th:src="@{images/logo.png}" height="100"
+                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img th:src="@{/images/logo.png}" height="100"
                         width="100" alt=""></a>
 
             </div>
@@ -257,15 +257,15 @@
 
     <!-- ! UIKIT JS -->
 
-    <!-- <script th:src="@{js/uikit/uikit.min.js}"></script>
-    <script th:src="@{js/uikit/uikit-icons.min.js}"></script>
+    <!-- <script th:src="@{/js/uikit/uikit.min.js}"></script>
+    <script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script th:src="@{js/script.js}"></script> -->
+    <script th:src="@{/js/script.js}"></script> -->
     
-    <!-- <script th:src="@{js/uikit/uikit.min.js}"></script>
-    <script th:src="@{js/uikit/uikit-icons.min.js}"></script>
+    <!-- <script th:src="@{/js/uikit/uikit.min.js}"></script>
+    <script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
     <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
-    <script th:src="@{js/script.js}"></script> -->
+    <script th:src="@{/js/script.js}"></script> -->
     
     <script th:src="@{/js/uikit/uikit.min.js}"></script>
 	<script th:src="@{/js/uikit/uikit-icons.min.js}"></script>

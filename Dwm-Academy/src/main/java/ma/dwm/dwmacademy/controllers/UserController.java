@@ -46,6 +46,7 @@ public class UserController {
 	@PostMapping("/signup")
 	public String signup(@Valid User user, BindingResult result, Model model) {
 		if (result.hasErrors()) {
+			model.addAttribute("user", user);
 			return "user-form";
 		}
 		
