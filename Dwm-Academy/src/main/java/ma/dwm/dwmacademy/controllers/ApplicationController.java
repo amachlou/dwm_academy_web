@@ -31,7 +31,7 @@ public class ApplicationController {
 		model.addAttribute("courses", courseRepository.findAll());
 		model.addAttribute("test", "Welcome Sweet Jiji");
 		model.addAttribute("user", user);
-		return "user-form";
+		return "redirect:/users/signup";
 	}
 	
 	@GetMapping("/test/{uri}")

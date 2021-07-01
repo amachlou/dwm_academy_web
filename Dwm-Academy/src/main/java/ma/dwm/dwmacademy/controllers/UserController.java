@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
+import ma.dwm.dwmacademy.utils.UserType;
 
 
 @Controller
-@RequestMapping(path = "/web/users")
+@RequestMapping(path = "/users")
 public class UserController {
 	
 	@Autowired
@@ -34,9 +36,10 @@ public class UserController {
 		return "";
 	}
 	
-	@GetMapping("/init_signup")
-	public String init_signup(User user, Model model) {
+	@GetMapping("/signup")
+	public String signup(User user, Model model) {
 		model.addAttribute("user", user);
+		model.addAttribute("user_types", UserType.values());
 		return "user-form";
 	}
 	
@@ -50,20 +53,22 @@ public class UserController {
 		return getAll(model);
 	}
 	
-	@GetMapping("/init_signin")
+	@GetMapping("/signin")
 	public String init_signin(User user, Model model) {
 		model.addAttribute("user", user);
+		model.addAttribute("user_types", UserType.values());
 		return "user-form";
 	}
 	
 	@PostMapping("/signin")
-	public String signin(@Valid User user, BindingResult result, Model model) {
+	public String signin(@Valid User user, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
+			model.addAttribute("user", user);
 			return "user-form";
 		}
 		
 		userRepository.save(user);
-		return getAll(model);
+		return "";// getAll(model);
 	}
 	
 	@GetMapping("/edit/{id}")
