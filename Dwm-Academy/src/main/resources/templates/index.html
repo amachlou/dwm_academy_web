@@ -1,99 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dwm Academy - E-learning platform</title>
-    
-    <!-- ! UIKIT CSS -->
-    <link rel="stylesheet" th:href="@{/css/custom-css/style.css}">
-    <link rel="stylesheet" th:href="@{/css/uikit/uikit.min.css}" />
-	<link rel="stylesheet" th:href="@{/css/custom-css/video-player.css}">
-	<link rel="stylesheet" th:href="@{/css/custom-css/dashboard.css}">
-	<link rel="stylesheet" th:href="@{/css/custom-css/global.css}">
-</head>
+<head th:replace="fragments/head :: head"></head>
 
 <body class="body">
 
-	<div>
-        <!-- <th:block th:replace="fragments/nav :: nav"></th:block> -->
-    </div>
-	
-    <!-- ! NAVBAR -->
-
-    <div>
-        <!-- <!-- <th:block th:replace="fragments/nav :: nav"></th:block> --> -->
-    </div>
-
-    <nav class="uk-navbar" uk-navbar>
-        <div class="uk-navbar-left uk-width-*">
-            <ul class="uk-navbar-nav uk-visible@m">
-                <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img th:src="@{/images/logo.png}"
-                            height="80" width="80" alt=""></a></li>
-                <li>
-                    <a href="#" class="categories">CATEGORIES</a>
-                    <div class="uk-navbar-dropdown uk-width-medium uk-border-rounded uk-margin-xlarge-top">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="uk-margin uk-margin-large-left">
-                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-* search-form">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search"
-                            placeholder="Search">
-                    </form>
-                </li>
-            </ul>
-            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
-                uk-toggle="target: #offcanvas-overlay"></a>
-            <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img
-                    th:src="@{/images/logo.png}" height="80" width="80" alt=""></a>
-        </div>
-        <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
-                <li><a href="#modal-sections-signup" uk-toggle>Signup</a></li>
-                <li><a href="#modal-sections-login" uk-toggle class="login">Login</a></li>
-            </ul>
-        </div>
-    </nav>
-
-
-
-    <!-- ! MOBILE MENU -->
-
-    <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
-        <div class="uk-offcanvas-bar uk-hidden@m uk-background-default">
-
-            <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
-            <ul class="uk-nav uk-nav-default">
-                <li class="uk-active uk-text-large"><a href="#">Menu</a></li>
-
-                <li class="uk-margin">
-                    <form class="uk-search uk-search-default uk-width-medium search-form uk-child-width-*">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search"
-                            placeholder="Search">
-                    </form>
-                </li>
-
-                <li class="uk-parent dropdown-category">
-                    <p href="#" class="uk-text-bolder">CATEGORIES</p>
-                    <ul class="uk-nav-sub">
-                        <li><a class="uk-text-truncate" href="#">Web Development</a></li>
-                        <li><a class="uk-text-truncate" href="#">Lorem ipsum dolor sit amet.</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-
+	<nav th:replace="fragments/nav :: navbar"></nav>
 
     <!-- ! signin  -->
 
@@ -1398,59 +1310,7 @@
 
 
     <!-- ! FOOTER -->
-
-    <footer id="page-footer" class="" uk-sticky>
-        <div class="uk-container uk-padding-small">
-            <div class="uk-child-width-expand@s" uk-grid>
-
-                <div>
-                    <h4>CATEGORIES</h4>
-                    <ul class="uk-list">
-                        <a th:each="category:${best_categories}" th:text="${category.name}" th:href="000"></a>
-                        <a href="">
-                            Show more
-                        </a>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>SOCIAL MEDIA</h4>
-                    <ul class="uk-list">
-                        <a uk-icon="icon: facebook" href=""></a>
-                        <a uk-icon="icon: youtube" href=""></a>
-                        <a uk-icon="icon: instagram" href=""></a>
-                        <a uk-icon="icon: github" href=""></a>
-
-                    </ul>
-                </div>
-
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-
-
-                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img th:src="@{/images/logo.png}" height="100"
-                        width="100" alt=""></a>
-
-            </div>
-            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 Dwm Academy.</p>
-        </div>
-    </footer>
-
-    <!-- ! UIKIT JS -->
-
-    <!-- <script src="script.js"></script> -->
-    <script th:src="@{/js/uikit/uikit.min.js}"></script>
-	<script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
-	
-	<script th:src="@{https://cdn.quilljs.com/1.3.6/quill.js}"></script>
-	<script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
-	
-	<script th:src="@{/js/video-player.js}"></script>
-	<script th:src="@{/js/script.js}"></script>
+	<footer id="page-footer" class="" uk-sticky th:replace="fragments/footer :: footer"></footer>
 	
 </body>
 

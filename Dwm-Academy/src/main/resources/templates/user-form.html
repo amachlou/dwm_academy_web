@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- ! UIKIT CSS -->
-    <link rel="stylesheet" th:href="@{/css/uikit/uikit.min.css}" />
-	<link rel="stylesheet" th:href="@{/css/custom-css/video-player.css}">
-	<link rel="stylesheet" th:href="@{/css/custom-css/dashboard.css}">
-	<link rel="stylesheet" th:href="@{/css/custom-css/global.css}">
-
-</head>
+<head th:replace="fragments/head :: head"></head>
 
 <body class="body">
 
     <!-- ! NAVBAR -->
+    <nav th:replace="fragments/nav :: navbar"></nav>
 
     <nav class="uk-navbar" uk-navbar>
         <div class="uk-navbar-left uk-width-*">
@@ -36,7 +26,7 @@
                 <li class="uk-margin uk-margin-large-left">
                     <form class="uk-search uk-search-default uk-width-medium uk-child-width-* search-form">
                         <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search"
+                        <input class="uk-search-input uk-border-rounded search-value" type="search" required
                             placeholder="Search">
                     </form>
                 </li>
@@ -66,7 +56,7 @@
                 <li class="uk-margin">
                     <form class="uk-search uk-search-default uk-width-medium search-form uk-child-width-*">
                         <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search"
+                        <input class="uk-search-input uk-border-rounded search-value" type="search" required
                             placeholder="Search">
                     </form>
                 </li>
@@ -98,44 +88,44 @@
                         	
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="first_name" th:field="*{first_name}" type="text" placeholder="First name">
+                                    <input class="uk-input uk-border-rounded" id="first_name" th:field="*{first_name}" type="text" placeholder="First name" required maxlength="50">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="last_name" th:field="*{last_name}" type="text" placeholder="Last name">
+                                    <input class="uk-input uk-border-rounded" id="last_name" th:field="*{last_name}" type="text" placeholder="Last name" required maxlength="50">
                                 </div>
                             </div>
 
                             <div class="uk-width-1-1">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="email" th:field="*{email}" type="email" placeholder="Email address">
+                                    <input class="uk-input uk-border-rounded" id="email" th:field="*{email}" type="email" placeholder="Email address" required maxlength="100">
                                 </div>
                             </div>
 
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" id="new-pass confirm-new-pass" type="text"
+                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" id="new-pass confirm-new-pass" type="text" required maxlength="100"
                                         placeholder="Create password">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" name="confirm_password" th:field="*{confirm_password}" type="text"
+                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" name="confirm_password" th:field="*{confirm_password}" type="text" required maxlength="100"
                                         placeholder="Comfirme password">
                                 </div>
                             </div>
 
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="date_birth" th:field="*{date_birth}" type="date"
+                                    <input class="uk-input uk-border-rounded" id="date_birth" th:field="*{date_birth}" type="date" min="01-01-1920" max="01-01-2011"
                                         placeholder="Date of birth">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
                                 <select class="uk-select uk-border-rounded" id="type" th:field="*{type}">
                                     <option value="">Select account type</option>
-                                    <option  th:each="user_type:${user_types}"  th:value="${user_type}" th:text="${user_type}"></option>
+                                    <option  th:each="user_type:${user_types}"  th:value="${user_type}" th:text="${user_type}" required></option>
                                 </select>
                             </div>
                             <div class="uk-width-1-2@s">
@@ -167,7 +157,7 @@
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">
                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
-                                    <input class="uk-input uk-border-rounded" name="email" th:field="*{email}" type="text">
+                                    <input class="uk-input uk-border-rounded" name="email" th:field="*{email}" type="text" required maxlength="100">
                                 </div>
                             </div>
                         </div>
@@ -175,7 +165,7 @@
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">
                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" type="password">
+                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" type="password" required maxlength="100">
                                 </div>
                             </div>
                         </div>
@@ -196,85 +186,10 @@
 
         </div>
     </div>
-
-
+	
     <!-- ! FOOTER -->
-
-    <footer id="page-footer" class="" uk-sticky>
-        <div class="uk-container uk-padding-small">
-            <div class="uk-child-width-expand@s" uk-grid>
-
-                <div>
-                    <h4>CATEGORIES</h4>
-                    <ul class="uk-list">
-                        <a href="">
-                            List item 1
-                        </a>
-                        <a href="">
-                            List item 1
-                        </a>
-                        <a href="">
-                            List item 1
-                        </a>
-                        <a href="">
-                            More...
-                        </a>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>SOCIAL MEDIA</h4>
-                    <ul class="uk-list">
-                        <a uk-icon="icon: facebook" href=""></a>
-                        <a uk-icon="icon: youtube" href=""></a>
-                        <a uk-icon="icon: instagram" href=""></a>
-                        <a uk-icon="icon: github" href=""></a>
-
-                    </ul>
-                </div>
-
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-                
-                <span th:if="${#fields.hasErrors('first_name')}" th:errors="first_name" class="text-danger"></span>
-				<span th:if="${#fields.hasErrors('last_name')}" th:errors="last_name" class="text-danger"></span>
-				<span th:if="${#fields.hasErrors('password')}" th:errors="password" class="text-danger"></span>
-				<span th:if="${#fields.hasErrors('confirm_password')}" th:errors="*{confirm_password}" class="text-danger"></span>
-				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-
-
-                <a class="uk-logo uk-margin-auto-vertical logo" href="#"><img th:src="@{/images/logo.png}" height="100"
-                        width="100" alt=""></a>
-
-            </div>
-            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 Dwm Academy.</p>
-        </div>
-    </footer>
-
-    <!-- ! UIKIT JS -->
-
-    <!-- <script th:src="@{/js/uikit/uikit.min.js}"></script>
-    <script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script th:src="@{/js/script.js}"></script> -->
-    
-    <!-- <script th:src="@{/js/uikit/uikit.min.js}"></script>
-    <script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
-    <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
-    <script th:src="@{/js/script.js}"></script> -->
-    
-    <script th:src="@{/js/uikit/uikit.min.js}"></script>
-	<script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
-	
-	<script th:src="@{https://cdn.quilljs.com/1.3.6/quill.js}"></script>
-	<script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
-	
-	<script th:src="@{/js/video-player.js}"></script>
-	<script th:src="@{/js/script.js}"></script>
+    <footer id="page-footer" class="" uk-sticky th:replace="fragments/footer :: footer"></footer>
+			
 </body>
 
 </html>

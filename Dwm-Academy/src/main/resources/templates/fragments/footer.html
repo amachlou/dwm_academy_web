@@ -1,0 +1,44 @@
+	<footer id="page-footer" class="" uk-sticky th:fragment="footer">
+        <div class="uk-container uk-padding-small">
+            <div class="uk-child-width-expand@s" uk-grid>
+
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <ul class="uk-list">
+                        <a th:each="category : ${categories}" th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a>
+                    </ul>
+                </div>
+				
+                <div>
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul class="uk-list">
+                        <a uk-icon="icon: facebook" href=""></a>
+                        <a uk-icon="icon: youtube" href=""></a>
+                        <a uk-icon="icon: instagram" href=""></a>
+                        <a uk-icon="icon: github" href=""></a>
+
+                    </ul>
+                </div>
+                
+                <!-- ! UIKIT JS -->
+                <script th:src="@{/js/uikit/uikit.min.js}"></script>
+				<script th:src="@{/js/uikit/uikit-icons.min.js}"></script>
+				
+				<script th:src="@{https://cdn.plyr.io/3.6.8/plyr.js}"></script>
+				
+				<script th:src="@{https://cdn.quilljs.com/1.3.6/quill.js}"></script>
+				<script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+				
+				<script th:src="@{/js/video-player.js}"></script>
+				<script th:src="@{/js/script.js}"></script>
+				
+				<script th:src="@{text-editor.js}"></script>
+				
+                <a class="uk-logo uk-margin-auto-vertical logo" href="#">
+                	<img th:src="@{/images/logo.png}" height="100" width="100" alt="">
+                </a>
+
+            </div>
+            <p class="uk-text-small uk-text-center">COPYRIGHT © 2021 Dwm Academy.</p>
+        </div>
+    </footer>
