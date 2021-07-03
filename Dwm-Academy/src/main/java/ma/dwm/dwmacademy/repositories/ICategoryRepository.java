@@ -11,7 +11,7 @@ import ma.dwm.dwmacademy.entities.Category;
 @RepositoryRestResource
 public interface ICategoryRepository extends JpaRepository<Category, Long> {
 	
-	@Query("select c from Category c ")
+	@Query("FROM Category c") // Select popular categories
 	public List<Category> getBestCategories();
 
 }

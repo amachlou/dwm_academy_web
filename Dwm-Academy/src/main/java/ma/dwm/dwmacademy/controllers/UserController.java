@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import ma.dwm.dwmacademy.entities.User;
+import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
 import ma.dwm.dwmacademy.utils.UserType;
 
@@ -23,6 +25,8 @@ public class UserController {
 	
 	@Autowired
 	private IUserRepository userRepository;
+	@Autowired
+	private ICategoryRepository categoyRepository;
 	
 	@GetMapping
 	public String getAll(Model model){
@@ -40,18 +44,24 @@ public class UserController {
 	public String signup(User user, Model model) {
 		model.addAttribute("user", user);
 		model.addAttribute("user_types", UserType.values());
+		model.addAttribute("categories", categoyRepository.findAll());
 		return "user-form";
 	}
 	
 	@PostMapping("/signup")
-	public String signup(@Valid User user, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			model.addAttribute("user", user);
-			return "user-form";
+	public ModelAndView signup(@Valid User user, BindingResult result, ModelMap model) {
+//		if (result.hasErrors()) {
+//			model.addAttribute("user", user);
+//			model.addAttribute("user_types", UserType.values());
+//			return "user-form";
+//		}
+		try {
+			userRepository.save(user);
+		} catch (Exception e) {
+			return new ModelAndView("redirect:/signup");
 		}
 		
-		userRepository.save(user);
-		return getAll(model);
+		return new ModelAndView("redirect:/", model);
 	}
 	
 	@GetMapping("/signin")

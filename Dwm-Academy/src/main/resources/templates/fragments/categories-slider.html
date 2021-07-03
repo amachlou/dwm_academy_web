@@ -1,0 +1,74 @@
+<div class="uk-section uk-section-muted" th:fragment="categories-slider" xmlns:th="http://www.thymeleaf.org">
+        <div class="uk-container">
+
+            <h2 class="uk-text-center">CATEGORIES</h2>
+
+            <ul class="uk-flex-center" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium" uk-tab>
+                <li th:each="category:${best_categories}"><a th:href="@{/categories/_${category.id}_/}" th:text="${category.name}"></a></li>
+            </ul>
+
+            <ul class="uk-switcher uk-margin category">
+                <li th:each="course:${best_categories.list_courses}">
+                    <div class="uk-slider-container-offset" uk-slider>
+
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+                            <ul class="uk-slider-items uk-child-width-1-3@m uk-child-width-1-2@s uk-grid">
+                                <li>
+                                    <div>
+                                        <div
+                                            class="uk-card uk-card-default uk-box-shadow-hover-small uk-border-rounded">
+                                            <div class="uk-card-media-top">
+                                                <img class="uk-border-rounded" th:src="@{/images/t1.jpg}" alt="">
+                                            </div>
+                                            <div
+                                                class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
+                                                <div class="uk-flex-top">
+                                                    <div class="uk-flex uk-flex-between">
+                                                        <p class="uk-text-light">john wilberg</p><span>6h 18m</span>
+                                                    </div>
+                                                    <h5>Lorem ipsum dolor sit amet
+                                                        consectetur
+                                                        adipisicing elit. Iste, a?lorem ipsum dolorem
+                                                    </h5>
+                                                </div>
+                                                <div class="uk-flex uk-flex-between">
+
+                                                    <span
+                                                        class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong>
+                                                        student</span>
+
+
+                                                    <div>
+                                                        <span uk-icon="more" class="uk-text-right"></span>
+                                                        <div uk-dropdown="pos: right-bottom"
+                                                            class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
+                                                            <ul class="uk-nav uk-dropdown-nav">
+                                                                <li
+                                                                    onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">
+                                                                    <a>Add to my list</a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <a class="uk-position-center-left uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-slidenav-large uk-hidden-hover" href="#"
+                                uk-slidenav-next uk-slider-item="next"></a>
+
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>

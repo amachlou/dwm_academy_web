@@ -25,18 +25,18 @@ import ma.dwm.dwmacademy.utils.UserType;
 @Data @NoArgsConstructor @AllArgsConstructor
 public class User extends BaseEntity {
 	
-	@NotBlank(message = "First name is mandatory")
-	@Size(min = 4, max = 50, message = "First name length should be betweeen 4 to 50 caracters")
+//	@NotBlank(message = "First name is mandatory")
+//	@Size(min = 4, max = 50, message = "First name length should be betweeen 4 to 50 caracters")
 	@Column(nullable = false, length = 50)
 	private String first_name;
 	
-	@NotBlank(message = "Last name is mandatory")
-	@Size(min = 4, max = 50, message = "Last name length should be betweeen 4 to 50 caracters")
+//	@NotBlank(message = "Last name is mandatory")
+//	@Size(min = 4, max = 50, message = "Last name length should be betweeen 4 to 50 caracters")
 	@Column(nullable = false, length = 50)
 	private String last_name;
 	
-	@NotBlank(message = "Email is mandatory")
-	@Size(min = 4, max = 100, message = "First name length should be betweeen 4 to 100 caracters")
+//	@NotBlank(message = "Email is mandatory")
+//	@Size(min = 4, max = 100, message = "First name length should be betweeen 4 to 100 caracters")
 	@Email(message = "Email should be valid")
 	@Column(nullable = false, length = 100)
 	private String email;
@@ -45,14 +45,13 @@ public class User extends BaseEntity {
 	@Temporal(TemporalType.DATE)
 	private Date date_birth;
 
-	@NotBlank(message = "Password is mandatory")
-	@Size(min = 4, max = 50, message = "Password lenth should be betweeen 4 to 50 caracters")
+//	@NotBlank(message = "Password is mandatory")
+//	@Size(min = 4, max = 50, message = "Password lenth should be betweeen 4 to 50 caracters")
 	@Column(nullable = false)
 	private String password;
 	
-	@NotBlank(message = "Password confirmation is mandatory")
-	@Size(min = 4, max = 50, message = "Password confirmation length should be betweeen 4 to 50 caracters")
-	@Column(nullable = false)
+//	@NotBlank(message = "Password confirmation is mandatory")
+//	@Size(min = 4, max = 50, message = "Password confirmation length should be betweeen 4 to 50 caracters")
 	@Transient
 	private String confirm_password;
 	

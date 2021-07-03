@@ -27,8 +27,8 @@
     <!-- If not logged in -->
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-            <li><a href="#">Signup</a></li>
-            <li><a href="#" class="login">Login</a></li>
+            <li><a th:href="@{/users/signup/}">Signup</a></li>
+            <li><a class="login" th:href="@{/users/signin/}">Login</a></li>
         </ul>
     </div>
 
