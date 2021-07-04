@@ -26,9 +26,13 @@
     </div>
     <!-- If not logged in -->
     <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
+        <!-- <ul class="uk-navbar-nav">
             <li><a th:href="@{/users/signup/}">Signup</a></li>
             <li><a class="login" th:href="@{/users/signin/}">Login</a></li>
+        </ul> -->
+        <ul class="uk-navbar-nav">
+            <li><a href="#modal-sections-signup" uk-toggle>Signup</a></li>
+            <li><a href="#modal-sections-login" uk-toggle class="login">Login</a></li>
         </ul>
     </div>
 

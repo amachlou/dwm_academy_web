@@ -36,7 +36,8 @@ public class ApplicationController {
 	}
 	
 	@GetMapping("/test/{uri}")
-	public String testPage(@PathVariable("uri") String uri, ModelMap model) {
+	public String testPage(@PathVariable("uri") String uri, ModelMap model, User user) {
+		model.addAttribute("user", user);
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
 		return uri;
 	}
