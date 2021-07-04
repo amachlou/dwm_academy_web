@@ -1,77 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/head :: head"></head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ! UIKIT CSS -->
+    <link rel="stylesheet" th:href="@{/css/uikit/uikit.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/custom-css/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/css/custom-css/global.css}">
+
+</head>
 
 <body class="body">
 
     <!-- ! NAVBAR -->
     <nav th:replace="fragments/nav :: navbar"></nav>
-
-    <!-- <nav class="uk-navbar" uk-navbar>
-        <div class="uk-navbar-left uk-width-*">
-            <ul class="uk-navbar-nav uk-visible@m">
-                <li class="uk-active"> <a class="uk-navbar-item uk-logo logo" href="#"><img src="/images/logo.png"
-                            height="80" width="80" alt=""></a></li>
-                <li>
-                    <a href="#" class="categories">CATEGORIES</a>
-                    <div class="uk-navbar-dropdown uk-width-medium uk-border-rounded uk-margin-xlarge-top">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a class="uk-text-truncate" href="#">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.</a></li>
-                            <li><a class="uk-text-truncate" href="#">Item</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="uk-margin uk-margin-large-left">
-                    <form class="uk-search uk-search-default uk-width-medium uk-child-width-* search-form">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search" required
-                            placeholder="Search">
-                    </form>
-                </li>
-            </ul>
-            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon type="button"
-                uk-toggle="target: #offcanvas-overlay"></a>
-            <a class="uk-navbar-item uk-logo uk-hidden@m uk-position-center logo" href="#"><img src="/images/logo.png"
-                    height="80" width="80" alt=""></a>
-        </div>
-        <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
-                <li><a href="#" class="signup-btn">Signup</a></li>
-                <li><a href="#" class="login signin-btn">Login</a></li>
-            </ul>
-        </div>
-    </nav>
-	 -->
-    <!-- ! MOBILE MENU -->
-
-    <<!-- div id="offcanvas-overlay" uk-offcanvas="overlay: true">
-        <div class="uk-offcanvas-bar uk-hidden@m uk-background-default">
-
-            <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
-            <ul class="uk-nav uk-nav-default">
-                <li class="uk-active uk-text-large"><a href="#">Menu</a></li>
-
-                <li class="uk-margin">
-                    <form class="uk-search uk-search-default uk-width-medium search-form uk-child-width-*">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input uk-border-rounded search-value" type="search" required
-                            placeholder="Search">
-                    </form>
-                </li>
-
-                <li class="uk-parent dropdown-category">
-                    <p href="#" class="uk-text-bolder">CATEGORIES</p>
-                    <ul class="uk-nav-sub">
-                        <li><a class="uk-text-truncate" href="#">Web Development</a></li>
-                        <li><a class="uk-text-truncate" href="#">Lorem ipsum dolor sit amet.</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div>
-    </div> -->
 
     <!-- ! Sign-container -->
 

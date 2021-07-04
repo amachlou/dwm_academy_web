@@ -22,7 +22,7 @@ public class CourseController {
 	@Autowired
 	private ICourseRepository courseRepository;
 	
-	@GetMapping("/courses")
+	@GetMapping
 	public String getAll(Model model){
 		model.addAttribute("courses", courseRepository.findAll());
 		return "course-overview";

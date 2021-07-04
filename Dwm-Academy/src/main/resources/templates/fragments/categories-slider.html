@@ -4,7 +4,7 @@
             <h2 class="uk-text-center">CATEGORIES</h2>
 
             <ul class="uk-flex-center" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium" uk-tab>
-                <li th:each="category:${best_categories}"><a th:href="@{/categories/_${category.id}_/}" th:text="${category.name}"></a></li>
+                <li th:each="category:${best_categories}"><a th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a></li>
             </ul>
 
             <ul class="uk-switcher uk-margin category">
@@ -34,20 +34,17 @@
                                                 </div>
                                                 <div class="uk-flex uk-flex-between">
 
-                                                    <span
-                                                        class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong>40</strong>
-                                                        student</span>
-
+                                                    <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove">
+                                                        <strong>40</strong>Student
+                                                    </span>
 
                                                     <div>
                                                         <span uk-icon="more" class="uk-text-right"></span>
                                                         <div uk-dropdown="pos: right-bottom"
                                                             class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
                                                             <ul class="uk-nav uk-dropdown-nav">
-                                                                <li
-                                                                    onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">
                                                                     <a>Add to my list</a></li>
-
                                                             </ul>
                                                         </div>
                                                     </div>

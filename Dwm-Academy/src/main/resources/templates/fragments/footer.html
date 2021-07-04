@@ -1,11 +1,12 @@
 	<footer id="page-footer" class="" uk-sticky th:fragment="footer">
         <div class="uk-container uk-padding-small">
             <div class="uk-child-width-expand@s" uk-grid>
-
+				
                 <div>
                     <h4>CATEGORIES</h4>
                     <ul class="uk-list">
-                        <a th:each="category : ${categories}" th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a>
+                        <a th:each="category : ${best_categories}" th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a>
+                        <a th:href="@{/categories}">More...</a>
                     </ul>
                 </div>
 				

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
+import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
 import ma.dwm.dwmacademy.utils.UserType;
 
@@ -27,6 +29,10 @@ public class UserController {
 	private IUserRepository userRepository;
 	@Autowired
 	private ICategoryRepository categoyRepository;
+	@Autowired
+	private ICategoryRepository categoryRepository;
+	@Autowired
+	private ICourseRepository courseRepository;
 	
 	@GetMapping
 	public String getAll(Model model){
@@ -104,6 +110,14 @@ public class UserController {
 	    User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 	    userRepository.delete(user);
 	    return getAll(model);
+	}
+	
+	@ModelAttribute
+	public void addAttributes(Model model) {
+		model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("best_categories", categoryRepository.getBestCategories());
+		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));
+		model.addAttribute("courses", courseRepository.findAll());
 	}
 	
 	

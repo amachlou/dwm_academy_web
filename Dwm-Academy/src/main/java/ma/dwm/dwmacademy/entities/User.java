@@ -1,19 +1,24 @@
 package ma.dwm.dwmacademy.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -63,16 +68,22 @@ public class User extends BaseEntity {
 	
 	// For teacher
 	@OneToMany(mappedBy = "teacher")
-	private List<Course> list_teacher_courses;
+	private Set<Course> list_teacher_courses = new HashSet<>();
 	
 //	For Students
 	@OneToMany(mappedBy = "student")
-	private List<Review> list_reviews;
-	@OneToMany(mappedBy = "student")
-	private List<StudentCourse> list_student_courses;
+	private List<Review> list_reviews = new ArrayList<>();
 	
 //	For Admin
 	@OneToMany(mappedBy = "admin")
-	private List<Course> list_admin_courses;
+	private Set<Course> list_admin_courses = new HashSet<>();
 	
+	/*
+	 * @OneToMany(mappedBy = "student") private Set<Course> list_students;
+	 */
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "course_student", 
+      joinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"))
+    private List<Course> list_courses;
 }

@@ -86,9 +86,10 @@ $( document ).ready(function() {
    
       });
 
+      /*
+      // Disable changing data refresh with JS, using Thymleaf
       $('#category-name').html($('#categorie-list ul li a').first().html());
-
-
+		
       $(document).on('click','#categorie-list ul li',function(){
         let categoryName=$('#category-name');
         
@@ -102,7 +103,7 @@ $( document ).ready(function() {
         $(this).addClass('active');
         $(this).children().addClass('active');
     
-      });
+      });*/
 
       $(".search-form").on('submit',function(e) {
         e.preventDefault();
