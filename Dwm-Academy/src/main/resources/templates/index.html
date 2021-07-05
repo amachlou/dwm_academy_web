@@ -42,62 +42,21 @@
 
     <div class="uk-section uk-section-default uk-light">
         <div class="uk-container teacher-list-container">
-
             <h2 class="uk-text-center uk-margin-medium-bottom">OUR TEACHERS</h2>
-
             <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
-                <div>
-
+                <div th:each="teacher:${teachers}">
                     <div class="uk-flex uk-flex-column uk-child-width-1-1 uk-flex-middle">
                         <img style="height: 150px;width: 150px;"
                             class="uk-border-circle uk-margin-small-bottom uk-box-shadow-medium"
                             th:src="@{/images/t3.jpg}" alt="">
-                        <div
-                            class="uk-tile uk-tile-default uk-border-rounded uk-margin-small-top uk-box-shadow-small uk-padding-small">
-                            <p class="uk-h4 uk-text-center uk-text-bolder">John Welberg</p>
-                            <p class="uk-text-center uk-text-normal">Fullstack Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-flex uk-flex-column uk-child-width-1-1 uk-flex-middle">
-                        <img style="height: 150px;width: 150px;"
-                            class="uk-border-circle uk-margin-small-bottom uk-box-shadow-medium"
-                            th:src="@{/images/t3.jpg}" alt="">
-                        <div
-                            class="uk-tile uk-tile-default uk-border-rounded uk-margin-small-top uk-box-shadow-small uk-padding-small">
-                            <p class="uk-h4 uk-text-center uk-text-bolder">John Welberg</p>
-                            <p class="uk-text-center uk-text-normal">Fullstack Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-flex uk-flex-column uk-child-width-1-1 uk-flex-middle">
-                        <img style="height: 150px;width: 150px;"
-                            class="uk-border-circle uk-margin-small-bottom uk-box-shadow-medium"
-                            th:src="@{/images/t3.jpg}" alt="">
-                        <div
-                            class="uk-tile uk-tile-default uk-border-rounded uk-margin-small-top uk-box-shadow-small uk-padding-small">
-                            <p class="uk-h4 uk-text-center uk-text-bolder">John Welberg</p>
-                            <p class="uk-text-center uk-text-normal">Fullstack Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-flex uk-flex-column uk-child-width-1-1 uk-flex-middle">
-                        <img style="height: 150px;width: 150px;"
-                            class="uk-border-circle uk-margin-small-bottom uk-box-shadow-medium"
-                            th:src="@{/images/t3.jpg}" alt="">
-                        <div
-                            class="uk-tile uk-tile-default uk-border-rounded uk-margin-small-top uk-box-shadow-small uk-padding-small">
-                            <p class="uk-h4 uk-text-center uk-text-bolder">John Welberg</p>
-                            <p class="uk-text-center uk-text-normal">Fullstack Developer</p>
+                        <div class="uk-tile uk-tile-default uk-border-rounded uk-margin-small-top uk-box-shadow-small uk-padding-small">
+                            <p class="uk-h4 uk-text-center uk-text-bolder" th:text="${teacher.first_name}+' '+${teacher.last_name}"></p>
+                            <p class="uk-text-center uk-text-normal" th:text="${teacher.title}"></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- ! PARTNER LIST -->
@@ -151,12 +110,8 @@
                             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                             cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <button
-                            class="uk-button uk-button-primary uk-button-large uk-border-rounded uk-text-bolder"><a href="">
-                                Start
-                                Teaching Today
-                            </a></button>
-
+                            <button class="uk-button uk-button-primary uk-button-large uk-border-rounded uk-text-bolder">
+                            <a th:href="@{/users/signup(target=teacher)}"> Start Teaching Today</a></button>
                     </div>
                 </div>
             </div>

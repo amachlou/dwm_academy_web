@@ -3,6 +3,8 @@ package ma.dwm.dwmacademy.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -42,19 +44,35 @@ public class UserController {
 	}
 	
 	@GetMapping("/{id}")
-	public String getOne(@PathVariable("id") long id, @RequestParam String tab,  Model model){
+	public String getOne(@PathVariable("id") long id, @RequestParam(defaultValue = "") String target,  Model model){
 		model.addAttribute("user", userRepository.findById(id));
-		model.addAttribute("tab", tab);
-//		switch("".equals("userY")) {
-//			case "": return "";
-//			case "": return "";
-//			case "": return "";
-//		}
+		model.addAttribute("target", target);
 		return "";
 	}
 	
+	@GetMapping("/home_")
+	public String home(@AuthenticationPrincipal User user, Model model){
+		model.addAttribute("user", user);
+		return "home";
+	}
+	
+	@GetMapping("/home")
+	public String dash(@AuthenticationPrincipal User user, Model model){
+		model.addAttribute("user", user);
+		if(user.getType().toString().equals(UserType.ADMIN.toString())) {
+			return "admin-dashboard";
+		} else if(user.getType().toString().equals(UserType.TEACHER.toString())) {
+			return "teacher-dashboard";
+		} else if(user.getType().toString().equals(UserType.STUDENT.toString())){
+			return "student-dashboard";
+		} else {
+			return "index";
+		}
+	}
+	
 	@GetMapping("/signup")
-	public String signup(User user, Model model) {
+	public String int_signup(@RequestParam(defaultValue = "") String target, User user, Model model) {
+		model.addAttribute("target", UserType.TEACHER);
 		model.addAttribute("user", user);
 		model.addAttribute("user_types", UserType.values());
 		model.addAttribute("categories", categoyRepository.findAll());
@@ -69,6 +87,7 @@ public class UserController {
 //			return "user-form";
 //		}
 		try {
+			user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 			userRepository.save(user);
 		} catch (Exception e) {
 			return new ModelAndView("redirect:/signup");
@@ -78,21 +97,21 @@ public class UserController {
 	}
 	
 	@GetMapping("/signin")
-	public String init_signin(User user, Model model) {
+	public String int_signin(User user, Model model) {
 		model.addAttribute("user", user);
 		model.addAttribute("user_types", UserType.values());
 		return "user-form";
 	}
 	
 	@PostMapping("/signin")
-	public String signin(@Valid User user, BindingResult result, ModelMap model) {
+	public ModelAndView signin(User user, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
 			model.addAttribute("user", user);
-			return "user-form";
+			return new ModelAndView("redirect:");
 		}
 		
 		userRepository.save(user);
-		return "";// getAll(model);
+		return new ModelAndView("redirect:/home", model);
 	}
 	
 	@GetMapping("/edit/{id}")

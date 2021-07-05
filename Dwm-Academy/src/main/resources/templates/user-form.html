@@ -50,13 +50,13 @@
 
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" id="new-pass confirm-new-pass" type="text" required maxlength="100"
+                                    <input class="uk-input uk-border-rounded" name="password" th:field="*{password}" id="new-pass confirm-new-pass" type="password" required maxlength="100"
                                         placeholder="Create password">
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
-                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" name="confirm_password" th:field="*{confirm_password}" type="text" required maxlength="100"
+                                    <input class="uk-input uk-border-rounded" id="confirm-new-pass" name="confirm_password" th:field="*{confirm_password}" type="password" required maxlength="100"
                                         placeholder="Comfirme password">
                                 </div>
                             </div>
@@ -68,16 +68,15 @@
                                 </div>
                             </div>
                             <div class="uk-width-1-2@s">
-                                <select class="uk-select uk-border-rounded" id="type" th:field="*{type}">
+                                <select class="uk-select uk-border-rounded" id="type" th:field="*{type}" required>
                                     <option value="">Select account type</option>
-                                    <option  th:each="user_type:${user_types}"  th:value="${user_type}" th:text="${user_type}" required></option>
+                                    <option th:each="user_type:${user_types}" th:value="${user_type}" th:if="${user_type neq 'ADMIN'}" th:text="${user_type}" required></option>
                                 </select>
                             </div>
                             <div class="uk-width-1-2@s">
 
-                                <label class="uk-margin-medium-right"><input class="uk-radio" type="radio" name="radio2"
-                                        checked>Male</label>
-                                <label><input class="uk-radio" type="radio" name="radio2">Female</label>
+                                <label class="uk-margin-medium-right"><input class="uk-radio" type="radio" name="sex" checked>Male</label>
+                                <label><input class="uk-radio" type="radio" name="sex">Female</label>
 
                             </div>
 
@@ -87,8 +86,9 @@
                                     Up</button>
                                 <hr>
                             </div>
-                            <p class="uk-text-normal uk-margin-remove">Already a member? <a
-                                    class="uk-text-bold green signin-btn">Sign in</a></p>
+                            <p class="uk-text-normal uk-margin-remove">
+                            	Already a member? <a  class="uk-text-bold green signin-btn">Sign in</a>
+                            </p>
                         </form>
 
                     </div>
@@ -97,7 +97,7 @@
                     <h2>Welcome Back to DWM Academy</h2>
                     <p>Sign in to continue to your account.</p>
     
-                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" action="#" th:action="@{/users/signin}"  th:object="${user}">
+                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" action="#" th:action="@{/users/signin}" th:object="${user}">
                         <div class="uk-width-1-1@s">
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">

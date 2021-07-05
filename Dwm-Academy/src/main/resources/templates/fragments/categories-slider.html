@@ -7,8 +7,8 @@
                 <li th:each="category:${best_categories}"><a th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a></li>
             </ul>
 
-            <ul class="uk-switcher uk-margin category">
-                <li th:each="course:${best_categories.list_courses}">
+            <ul class="uk-switcher uk-margin category" th:each="category:${best_categories}">
+                <li th:each="course:${category.list_courses}">
                     <div class="uk-slider-container-offset" uk-slider>
 
                         <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">

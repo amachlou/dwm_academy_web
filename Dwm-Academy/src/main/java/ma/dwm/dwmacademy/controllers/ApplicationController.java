@@ -33,7 +33,7 @@ public class ApplicationController {
 //		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));
 //		model.addAttribute("courses", courseRepository.findAll());
 		model.addAttribute("user", user);
-		return "redirect:/users/signup";
+		return "index";
 	}
 	
 	@GetMapping("/test/{uri}")
@@ -47,7 +47,9 @@ public class ApplicationController {
 	}
 	
 	@ModelAttribute
-	public void addAttributes(Model model) {
+	public void addAttributes(Model model, User user) {
+//		 @AuthenticationPrincipal
+		model.addAttribute("user", user);
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
 		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));

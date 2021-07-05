@@ -48,7 +48,7 @@
                                         <div class="uk-card-body uk-padding-remove uk-border-rounded uk-flex uk-flex-between uk-flex-column">
                                             <div class="uk-flex-top">
                                                 <div class="uk-flex uk-flex-between">
-                                                    <p class="uk-text-light" th:text="${course.teacher.name}"></p><span th:text="${course.duration}"></span>
+                                                    <p class="uk-text-light" th:text="${course.teacher.first_name+' '+course.teacher.last_name}"></p><span th:text="${course.duration}"></span>
                                                 </div>
                                                 <h5 th:text="${course.description}">
                                               </div>
