@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
 
 @SpringBootApplication
+@EnableJpaRepositories("ma.dwm.dwmacademy.repositories")
 public class DwmAcademyApplication implements CommandLineRunner {
 
 	@Autowired

@@ -45,8 +45,8 @@
                     th:src="@{/images/default-picture.png}">
                 <div class="uk-navbar-dropdown uk-border-rounded">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="#">My Profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                    	<li><a th:href="@{/categories/__${user.id}__(tab=profile)}">My Profile</a></li>
+                        <li><a th:href="@{/categories/__${user.id}__(tab=courses)}">My Courses</a></li>
                     </ul>
                 </div>
             </li>
