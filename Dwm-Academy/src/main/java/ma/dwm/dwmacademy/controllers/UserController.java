@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ma.dwm.dwmacademy.entities.User;
@@ -41,8 +42,14 @@ public class UserController {
 	}
 	
 	@GetMapping("/{id}")
-	public String getOne(@PathVariable("id") long id, Model model){
+	public String getOne(@PathVariable("id") long id, @RequestParam String tab,  Model model){
 		model.addAttribute("user", userRepository.findById(id));
+		model.addAttribute("tab", tab);
+//		switch("".equals("userY")) {
+//			case "": return "";
+//			case "": return "";
+//			case "": return "";
+//		}
 		return "";
 	}
 	

@@ -65,6 +65,8 @@ public class User extends BaseEntity {
 	private UserType type;
 	
 	private String photo;
+	private boolean active;
+	private String roles;
 	
 	// For teacher
 	@OneToMany(mappedBy = "teacher")
