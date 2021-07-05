@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
 import ma.dwm.dwmacademy.entities.Category;
 
-@RepositoryRestResource
+@Repository
 public interface ICategoryRepository extends JpaRepository<Category, Long> {
 	
 	@Query("FROM Category c") // Select popular categories

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ma.dwm.dwmacademy.entities.Category;
+import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 
 
@@ -38,9 +39,8 @@ public class CategoryController {
 	}
 	
 	@GetMapping("/{id}")
-	public String getOne(@PathVariable("id") long id, @RequestParam String tab, Model model){
+	public String getOne(@PathVariable("id") long id, Model model){
 		Optional<Category> current_category = categoryRepository.findById(id);
-		model.addAttribute("tab", tab);
 		model.addAttribute("current_category", categoryRepository.findById(id).get());
 //		model.addAttribute("list_courses", current_category.get().getList_courses());
 		return "category-page";
@@ -71,7 +71,8 @@ public class CategoryController {
 	}
 	
 	@ModelAttribute
-	public void addAttributes(Model model) {
+	public void addAttributes(Model model, User user) {
+		model.addAttribute("user", user);
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
 	}
