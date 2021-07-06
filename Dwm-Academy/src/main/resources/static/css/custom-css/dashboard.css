@@ -11,22 +11,28 @@
   color: white !important;
 }
 
-.teacher-info.uk-card{
-  cursor: auto;
+/* todo */
+
+.management table{
+  overflow-x:scroll;
 }
 
-.manage-teacher table .uk-button {
+.management table .uk-button {
   padding: 0 15px;
   border: none;
 }
 
-.manage-teacher table .uk-button a {
+.management table .uk-button a {
   padding-left: 8px;
   
 }
-.manage-teacher a.profile-link {
+.management a.profile-link {
   color: var(--blue) !important;
   
+}
+
+.teacher-info.uk-card{
+  cursor: auto;
 }
 
 .manage-teacher table .uk-button a:hover {
@@ -132,3 +138,21 @@ a.add-new:hover {
 table a {
   color: var(--orange) !important;
 }
+
+.h-scroll::-webkit-scrollbar{
+  width: 5px;
+  background-color: white;
+}
+.h-scroll::-webkit-scrollbar-thumb{
+  background-color:var(--blue);
+}
+
+.v-scroll::-webkit-scrollbar{
+  width: 10px;
+  background-color: white;
+}
+
+.v-scroll::-webkit-scrollbar-thumb{
+  background-color:var(--blue);
+}
+

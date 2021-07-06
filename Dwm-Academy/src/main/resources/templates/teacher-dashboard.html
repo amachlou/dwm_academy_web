@@ -62,7 +62,7 @@
                     </ul>
 
                     <ul class="uk-switcher uk-text-left uk-margin-large-bottom">
-                        <li class="uk-width-1-2@m">
+                        <li class="uk-width-1-1@m">
 
                             <!-- ? description -->
 
@@ -83,7 +83,7 @@
 
                             <!-- ? form -->
 
-                            <form class="uk-form-stacked uk-hidden" id="profile-form">
+                            <form class="uk-form-stacked uk-child-width-1-2@m uk-hidden" id="profile-form">
 
                                 <div class="uk-margin-medium">
                                     <label class="uk-form-label" for="first">Fisrt Name</label>
@@ -162,10 +162,13 @@
                                     </div>
                                 </div>
 
-                                <a uk-scroll
-                                    class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting"
-                                    id="save-profile" type="button">Save
-                                    Changes</a>
+                                <div class="uk-margin uk-margin-large-top">
+                                    <a uk-scroll
+                                        class="uk-button uk-button-default uk-button-small uk-margin-small-right uk-border-rounded uk-text-capitalize setting" id="save-profile" type="button">Save
+                                        Changes</a>
+                                        <a uk-scroll
+                                        class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting cancel-profile-form" type="button">Cancel</a>
+                                </div>
 
                             </form>
 
@@ -297,10 +300,11 @@
                                     </div>
 
                                     <hr>
-                                    <div class="uk-margin">
+                                    <div class="uk-margin uk-margin-large-top">
                                         <a uk-scroll
-                                            class="uk-button uk-button-default uk-margin-medium uk-button-small uk-border-rounded uk-text-capitalize setting"
-                                            type="button" id="add-course">Add Course</a>
+                                            class="uk-button uk-button-default uk-button-small uk-margin-small-right uk-border-rounded uk-text-capitalize setting" id="add-course" type="button">Add Course</a>
+                                            <a uk-scroll
+                                            class="uk-button uk-button-default uk-button-small uk-border-rounded uk-text-capitalize setting cancel-course-form" type="button">Cancel</a>
                                     </div>
 
 
