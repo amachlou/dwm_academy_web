@@ -132,3 +132,21 @@ a.add-new:hover {
 table a {
   color: var(--orange) !important;
 }
+
+.h-scroll::-webkit-scrollbar{
+  width: 5px;
+  background-color: white;
+}
+.h-scroll::-webkit-scrollbar-thumb{
+  background-color:var(--blue);
+}
+
+.v-scroll::-webkit-scrollbar{
+  width: 10px;
+  background-color: white;
+}
+
+.v-scroll::-webkit-scrollbar-thumb{
+  background-color:var(--blue);
+}
+

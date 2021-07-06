@@ -3,7 +3,6 @@ package ma.dwm.dwmacademy.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import ma.dwm.dwmacademy.entities.Course;
 import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
-import ma.dwm.dwmacademy.utils.UserType;
+import ma.dwm.dwmacademy.utils.enum_userType;
 
 
 @Controller
@@ -44,37 +44,29 @@ public class UserController {
 	}
 	
 	@GetMapping("/{id}")
-	public String getOne(@PathVariable("id") long id, @RequestParam(defaultValue = "") String target,  Model model){
-		model.addAttribute("user", userRepository.findById(id));
+	public String getOne(User user, @PathVariable("id") long id, @RequestParam(defaultValue = "") String target,  Model model){
+//		model.addAttribute("user", userRepository.findById(id));
 		model.addAttribute("target", target);
-		return "";
-	}
-	
-	@GetMapping("/home_")
-	public String home(@AuthenticationPrincipal User user, Model model){
-		model.addAttribute("user", user);
-		return "home";
-	}
-	
-	@GetMapping("/home")
-	public String dash(@AuthenticationPrincipal User user, Model model){
-		model.addAttribute("user", user);
-		if(user.getType().toString().equals(UserType.ADMIN.toString())) {
-			return "admin-dashboard";
-		} else if(user.getType().toString().equals(UserType.TEACHER.toString())) {
+		if(user.getType().toString().equals(enum_userType.ADMIN.toString())) {
+		return "admin-dashboard";
+		} else if(user.getType().toString().equals(enum_userType.TEACHER.toString())) {
 			return "teacher-dashboard";
-		} else if(user.getType().toString().equals(UserType.STUDENT.toString())){
+		} else if(user.getType().toString().equals(enum_userType.STUDENT.toString())){
 			return "student-dashboard";
 		} else {
 			return "index";
 		}
 	}
 	
+	@GetMapping("/home")
+	public String home(User user, Model model){
+		return "home";
+	}
+	
 	@GetMapping("/signup")
 	public String int_signup(@RequestParam(defaultValue = "") String target, User user, Model model) {
-		model.addAttribute("target", UserType.TEACHER);
-		model.addAttribute("user", user);
-		model.addAttribute("user_types", UserType.values());
+		model.addAttribute("target", enum_userType.TEACHER);
+		model.addAttribute("user_types", enum_userType.values());
 		model.addAttribute("categories", categoyRepository.findAll());
 		return "user-form";
 	}
@@ -98,26 +90,22 @@ public class UserController {
 	
 	@GetMapping("/signin")
 	public String int_signin(User user, Model model) {
-		model.addAttribute("user", user);
-		model.addAttribute("user_types", UserType.values());
 		return "user-form";
 	}
 	
 	@PostMapping("/signin")
 	public ModelAndView signin(User user, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
-			model.addAttribute("user", user);
 			return new ModelAndView("redirect:");
 		}
+		user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));;
 		
-		userRepository.save(user);
-		return new ModelAndView("redirect:/home", model);
+		return new ModelAndView("redirect:/users/home", model);
 	}
 	
 	@GetMapping("/edit/{id}")
 	public String init_update(@PathVariable("id") long id, Model model) {
 		User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
-		model.addAttribute("user", user);
 		return "update-user";
 	}
 	
@@ -138,12 +126,23 @@ public class UserController {
 	    return getAll(model);
 	}
 	
+	@GetMapping("/{user_id}/courses/{course_id}/add")
+	public String addCourse(@PathVariable("user_id") long user_id, @PathVariable("course_id") long course_id, Model model) {
+	    User user = userRepository.findById(user_id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + user_id));
+	    Course course = courseRepository.findById(course_id).orElseThrow(() -> new IllegalArgumentException("Invalid course Id:" + course_id));
+	    user.getList_courses().add(course);
+	    userRepository.save(user);
+	    return getAll(model);
+	}
+	
 	@ModelAttribute
 	public void addAttributes(Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
-		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));
+		model.addAttribute("teachers", userRepository.findByType(enum_userType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
+		model.addAttribute("user_types", enum_userType.values());
+		model.addAttribute("user", userRepository.findByType(enum_userType.ADMIN).get(0)); // TODO For testing
 	}
 	
 	

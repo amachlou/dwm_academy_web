@@ -30,14 +30,14 @@
             <li><a th:href="@{/users/signup/}">Signup</a></li>
             <li><a class="login" th:href="@{/users/signin/}">Login</a></li>
         </ul> -->
-        <ul class="uk-navbar-nav">
+        <ul class="uk-navbar-nav" th:if="${user != null}">
             <li><a href="#modal-sections-signup" uk-toggle>Signup</a></li>
             <li><a href="#modal-sections-login" uk-toggle class="login">Login</a></li>
         </ul>
     </div>
 	
     <!-- If logged in -->
-    <div class="uk-navbar-right uk-width-1-6">
+    <div class="uk-navbar-right uk-width-1-6" sec:authotize="isAuthenticated()">
         <ul class="uk-navbar-nav">
             <li class="uk-margin-small-right"><a href="#">My Courses</a></li>
             <li>

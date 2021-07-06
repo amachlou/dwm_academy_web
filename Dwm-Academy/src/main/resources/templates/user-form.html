@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -70,15 +70,26 @@
                             <div class="uk-width-1-2@s">
                                 <select class="uk-select uk-border-rounded" id="type" th:field="*{type}" required>
                                     <option value="">Select account type</option>
-                                    <option th:each="user_type:${user_types}" th:value="${user_type}" th:if="${user_type neq 'ADMIN'}" th:text="${user_type}" required></option>
+                                    <option th:each="user_type:${user_types}" th:value="${user_type}" th:if="${user_type != 'ADMIN'}" th:text="${user_type}"></option>
                                 </select>
                             </div>
+							
                             <div class="uk-width-1-2@s">
-
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-border-rounded" id="title" th:field="*{title}" type="text" placeholder="Title: 'Web Developer'">
+                                </div>
+                            </div>
+							<div class="uk-width-1-2@s">
                                 <label class="uk-margin-medium-right"><input class="uk-radio" type="radio" name="sex" checked>Male</label>
                                 <label><input class="uk-radio" type="radio" name="sex">Female</label>
-
                             </div>
+                            <!-- <div class="uk-width-1-2@s">
+                            	<div uk-form-custom="target: true">
+                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: image"></span>
+                                     <input type="file" accept="image/*" id="photo" th:field="*{photo}">
+                                     <input class="uk-input uk-border-rounded" type="text" placeholder="Select photo" disabled>
+                                 </div>
+                            </div> -->
 
                             <div class="uk-width-1-1@s uk-align-center">
                                 <button
@@ -97,7 +108,7 @@
                     <h2>Welcome Back to DWM Academy</h2>
                     <p>Sign in to continue to your account.</p>
     
-                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" action="#" th:action="@{/users/signin}" th:object="${user}">
+                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" th:action="@{/users/signin}" th:object="${user}">
                         <div class="uk-width-1-1@s">
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">
@@ -116,7 +127,7 @@
                         </div>
     
                         <div class="uk-width-1-1@s uk-align-center">
-                            <button class="uk-button uk-button-default uk-width-1-2 hero-btn uk-margin-small-top uk-text-capitalize uk-border-rounded">Sign Up</button>
+                            <button class="uk-button uk-button-default uk-width-1-2 hero-btn uk-margin-small-top uk-text-capitalize uk-border-rounded">Signin</button>
                             <hr>
                         </div>
                         <p class="uk-text-normal uk-margin-remove">Not a member yet? 

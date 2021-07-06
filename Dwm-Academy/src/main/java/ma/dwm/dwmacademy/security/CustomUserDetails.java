@@ -8,21 +8,14 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import ma.dwm.dwmacademy.entities.User;
-import ma.dwm.dwmacademy.utils.UserType;
 
 public class CustomUserDetails implements UserDetails {
 
-	private String email;
-	private String password;
-	private boolean activce;
-	private UserType type;
+	User user;
 //	private List<GrantedAuthority> list_authorities;
 
 	public CustomUserDetails(User user) {
-		this.email = user.getEmail();
-		this.password = user.getPassword();
-		this.activce = user.isActive();
-		this.type = type;
+		this.user = user;
 //		this.list_authorities = Arrays.stream(user.getRoles().split(","))
 //				.map(SimpleGrantedAuthority::new)
 //				.collect(Collectors.toList());
@@ -30,17 +23,17 @@ public class CustomUserDetails implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Collections.singleton(new SimpleGrantedAuthority(type.toString()));
+		return Collections.singleton(new SimpleGrantedAuthority(user.getType().toString()));
 	}
-
+	
 	@Override
 	public String getPassword() {
-		return password;
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return email;
+		return user.getEmail();
 	}
 
 	@Override
@@ -60,7 +53,7 @@ public class CustomUserDetails implements UserDetails {
 
 	@Override
 	public boolean isEnabled() {
-		return activce;
+		return user.isActive();
 	}
 	
 }

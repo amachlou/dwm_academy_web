@@ -39,21 +39,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests()
-		.antMatchers("/users").authenticated()
-		.antMatchers("/categories/**").hasAnyRole("ADMIN")
-		.antMatchers("/categories").authenticated()
-		.antMatchers("/courses/**").hasAnyRole("ADMIN","TEACHER")
-		.antMatchers("/courses").authenticated()
-		.antMatchers("/users/signup").permitAll()
-		.antMatchers("/users/signin").permitAll()
-		.antMatchers("/","static/css","static/js").permitAll()
-		.and()
-		.formLogin()
-		.loginPage("/users/signin")
-		.loginProcessingUrl("/users/signin")
-		.defaultSuccessUrl("/users/home",true)
-		.failureUrl("/login.html?error=true").permitAll();
+		http
+			.authorizeRequests()
+			.antMatchers("/users").authenticated()
+			.antMatchers("/categories/**").hasAnyRole("ADMIN")
+			.antMatchers("/categories").authenticated()
+			.antMatchers("/courses/**").hasAnyRole("ADMIN","TEACHER")
+			.antMatchers("/courses").authenticated()
+			.antMatchers("/users/signup").permitAll()
+			.antMatchers("/users/signin").permitAll()
+	//		.antMatchers("/","static/css","static/js").permitAll()
+			.and()
+			.formLogin().permitAll()
+			.loginPage("/users/signin")
+			.loginProcessingUrl("/users/signin")
+			.defaultSuccessUrl("/users/home",true)
+			.failureUrl("/users/signin").permitAll()
+			.and()
+			.logout()
+			.logoutSuccessUrl("/");
 		
 	}
 

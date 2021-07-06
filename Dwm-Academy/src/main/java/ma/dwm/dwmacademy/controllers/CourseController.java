@@ -3,7 +3,6 @@ package ma.dwm.dwmacademy.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +17,7 @@ import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
-import ma.dwm.dwmacademy.utils.UserType;
+import ma.dwm.dwmacademy.utils.enum_userType;
 
 
 @Controller
@@ -51,6 +50,16 @@ public class CourseController {
 		return "update-course";
 	}
 	
+	@PostMapping("/add/{user_id}")
+	public String addCourse(@Valid Course course, @PathVariable(name = "teacher_id") long teacher_id, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return "update-course";
+		}
+		course.setTeacher(userRepository.getById(teacher_id));
+		courseRepository.save(course);
+		return getAll(model);//"redirect:";
+	}
+	
 	@PostMapping("/update")
 	public String update(@Valid Course course, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -74,7 +83,7 @@ public class CourseController {
 		model.addAttribute("user", user);
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
-		model.addAttribute("teachers", userRepository.findByType(UserType.TEACHER));
+		model.addAttribute("teachers", userRepository.findByType(enum_userType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
 	}
 
