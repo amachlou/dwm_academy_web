@@ -5,9 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import ma.dwm.dwmacademy.entities.Category;
-import ma.dwm.dwmacademy.entities.Course;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
@@ -50,9 +49,10 @@ public class DwmAcademyApplication implements CommandLineRunner {
 		
 //		Course(String, String, Date, String, User, Category, User, List<Content>, Set<User>)
 		
-		
+		String password = new BCryptPasswordEncoder().encode("01");
 //		Teacher
-//		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
+		
+//		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "Java Developer", new Date(), password, null, null, Enum_userType.ADMIN, enum_gender.MALE, true, null, null, null, null, null));
 //		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
 //		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
 //		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
