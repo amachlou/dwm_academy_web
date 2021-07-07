@@ -44,11 +44,14 @@ public class UserController {
 	}
 	
 	@GetMapping("/{id}")
-	public String getOne(User user, @PathVariable("id") long id, @RequestParam(defaultValue = "") String target,  Model model){
+	public String getOne(@PathVariable("id") long id, @RequestParam(defaultValue = "") String target,  Model model){
 //		model.addAttribute("user", userRepository.findById(id));
+		// For demonstration
+		User user = userRepository.findByType(Enum_userType.ADMIN).get(0);
 		model.addAttribute("target", target);
+		
 		if(user.getType().toString().equals(Enum_userType.ADMIN.toString())) {
-		return "admin-dashboard";
+			return "admin-dashboard";
 		} else if(user.getType().toString().equals(Enum_userType.TEACHER.toString())) {
 			return "teacher-dashboard";
 		} else if(user.getType().toString().equals(Enum_userType.STUDENT.toString())){
@@ -57,9 +60,11 @@ public class UserController {
 			return "index";
 		}
 	}
-	
+
 	@GetMapping("/home")
-	public String home(User user, Model model){
+//	@GetMapping("/home/{id}")
+	public String home(/*@PathVariable long id,*/ Model model){
+//		User user = userRepository.findById(id).get();
 		return "home";
 	}
 	
@@ -72,7 +77,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/signup")
-	public ModelAndView signup(@Valid User user, BindingResult result, ModelMap model) {
+	public String signup(@Valid User user, BindingResult result, ModelMap model) {
 //		if (result.hasErrors()) {
 //			model.addAttribute("user", user);
 //			model.addAttribute("user_types", UserType.values());
@@ -82,10 +87,11 @@ public class UserController {
 			user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 			userRepository.save(user);
 		} catch (Exception e) {
-			return new ModelAndView("redirect:/signup");
+//			return new ModelAndView("redirect:/signup");
+			return "user-form";
 		}
-		
-		return new ModelAndView("redirect:/", model);
+//		return new ModelAndView("redirect:/users/signin");
+		return "home";
 	}
 	
 	@GetMapping("/signin")
@@ -103,6 +109,11 @@ public class UserController {
 		return new ModelAndView("redirect:/users/home", model);
 	}
 	
+	@PostMapping("/logout")
+	public String update() {
+		return "index";
+	}
+	
 	@GetMapping("/edit/{id}")
 	public String init_update(@PathVariable("id") long id, Model model) {
 		User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
@@ -117,11 +128,6 @@ public class UserController {
 		
 		userRepository.save(user);
 		return getAll(model);//"redirect:";
-	}
-	
-	@PostMapping("/logout")
-	public String update(Model model) {
-		return "index";
 	}
 	
 	@GetMapping("/delete/{id}")
@@ -149,13 +155,6 @@ public class UserController {
 		model.addAttribute("user_types", Enum_userType.values());
 		model.addAttribute("user", userRepository.findByType(Enum_userType.ADMIN).get(0)); // TODO For testing
 	}
-	
-	
-	
-	
-	
-	
-	
 
 //    @GetMapping(path="/photoProduct/{id}",produces = MediaType.IMAGE_PNG_VALUE)
 //    public byte[] getPhoto(@PathVariable("id") Long id) throws Exception{
@@ -169,12 +168,5 @@ public class UserController {
 //       Files.write(Paths.get(System.getProperty("user.home")+"/ecom/products/"+p.getPhotoName()),file.getBytes());
 //       productRepository.save(p);
 //    }
-    
-    
-    
-    
-    
-    
-    
 
 }

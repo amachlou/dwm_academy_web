@@ -41,10 +41,15 @@ public class ApplicationController {
 		return uri;
 	}
 	
-	@GetMapping("/403")
-	public String error403(User user, ModelMap model) {
-		return "403";
-	}
+//	@GetMapping("error")
+//	public String error(Model model) {
+//		return "error";
+//	}
+//	
+//	@GetMapping("403")
+//	public String error403(ModelMap model) {
+//		return "403";
+//	}
 	
 	@ModelAttribute
 	public void addAttributes(Model model, User user) {

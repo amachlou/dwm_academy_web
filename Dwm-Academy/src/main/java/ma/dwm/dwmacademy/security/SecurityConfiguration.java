@@ -41,13 +41,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http
 			.authorizeRequests()
-			.antMatchers("/users").authenticated()
-			.antMatchers("/categories/**").hasAnyRole("ADMIN")
-			.antMatchers("/categories").authenticated()
-			.antMatchers("/courses/**").hasAnyRole("ADMIN","TEACHER")
-			.antMatchers("/courses").authenticated()
-			.antMatchers("/users/signup").permitAll()
-			.antMatchers("/users/signin").permitAll()
+//			.antMatchers("/users").authenticated()
+//			.antMatchers("/categories/**")./hasAnyRole("ADMIN")
+//			.antMatchers("/categories").authenticated()
+//			.antMatchers("/courses/**").hasAnyRole("ADMIN","TEACHER")
+//			.antMatchers("/courses").authenticated()
+//			.antMatchers("/users/signup").permitAll()
+//			.antMatchers("/users/signin").permitAll()
+			.antMatchers("/**").permitAll() // For demonstration
 	//		.antMatchers("/","static/css","static/js").permitAll()
 			.and()
 			.formLogin().permitAll()

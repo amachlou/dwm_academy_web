@@ -31,7 +31,9 @@
                     <ul class="uk-list">
                         <h3 href="">Categories</h3>
                         <hr>
-                        <li class="${current_category.id == category.id} ? 'active' : 'category-item'" th:each="category : ${categories}"><a th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a></li>
+                        <li class="${current_category.id == category.id} ? 'active' : 'category-item'" th:each="category : ${categories}">
+                        	<a th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a>
+                       	</li>
                     </ul>
                 </div>
                 <div class="uk-width-expand@m">
@@ -53,7 +55,7 @@
                                                 <h5 th:text="${course.description}">
                                               </div>
                                             <div class="uk-flex uk-flex-between">
-                                                <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong th:text="${#lists.size(course.list_student_courses)}"></strong> student</span>
+                                                <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove"><strong th:text="${#list.size(course.list_students)}"></strong> student</span>
                                                 <div>
                                                     <span uk-icon="more" class="uk-text-right"></span>
                                                     <div uk-dropdown="pos: right-bottom"
@@ -70,7 +72,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="uk-width-1-1@s" th:if="${#lists.size(current_category.list_courses) > 0}">
+                        <div class="uk-width-1-1@s" th:if="${not #lists.isEmpty(current_category.list_courses)}">
                             <ul class="uk-pagination">
                                 <li><a href="#"><span class="uk-margin-small-right" uk-pagination-previous></span>
                                         Previous</a>

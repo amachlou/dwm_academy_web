@@ -2,11 +2,11 @@ package ma.dwm.dwmacademy.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,9 +39,7 @@ public class CategoryController {
 	
 	@GetMapping("/{id}")
 	public String getOne(@PathVariable("id") long id, Model model){
-		Optional<Category> current_category = categoryRepository.findById(id);
 		model.addAttribute("current_category", categoryRepository.findById(id).get());
-//		model.addAttribute("list_courses", current_category.get().getList_courses());
 		return "category-page";
 	}
 	
@@ -73,7 +71,8 @@ public class CategoryController {
 	public void addAttributes(Model model, User user) {
 		model.addAttribute("user", user);
 		model.addAttribute("categories", categoryRepository.findAll());
-		model.addAttribute("best_categories", categoryRepository.getBestCategories());
+//		model.addAttribute("current_categorie", categoryRepository.findAll().get(0));
+		model.addAttribute("best_categories", categoryRepository.getCategoriesPage(PageRequest.of(0, 3)));
 	}
 
 }

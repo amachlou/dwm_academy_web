@@ -23,10 +23,10 @@ $( document ).ready(function() {
       UIkit.switcher('.dashboard-tab').show(0);
     });
 
-    $(saveProfile).on('click',()=>{
+    /*$(saveProfile).on('click',()=>{
         profileForm.addClass('uk-hidden');
         profileDescription.removeClass('uk-hidden');
-      });
+      });*/
 
       $(addContent).on('click',()=>{
         addContentContainer.addClass('uk-hidden');

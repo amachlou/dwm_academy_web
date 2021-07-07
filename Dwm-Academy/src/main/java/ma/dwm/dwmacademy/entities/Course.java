@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -29,6 +30,7 @@ public class Course extends BaseEntity {
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	private String photo;
+	private String duration;
 	
 	@ManyToOne
 	private User admin;
@@ -40,7 +42,7 @@ public class Course extends BaseEntity {
 	@OneToMany(mappedBy = "course")
 	private List<Content> list_contents;
 	
-	@ManyToMany(mappedBy = "list_courses")
+	@ManyToMany(mappedBy = "list_courses", fetch = FetchType.EAGER)
     private List<User> list_students;
 	
 }
