@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -36,9 +37,10 @@
                 <div id="video_player">
                     <h2>Html And CSS Video Gallery</h2>
                     <p><span>samantha parker</span> ,<span>web designer</span></p>
-                    
-                    <video id="player" poster="" class="video uk-border-rounded uk-width-1-1@m" playsinline controls
-                        data-poster="images/t1.jpg">
+
+                    <video id="player" poster=""
+                        class="uk-margin-medium-left uk-margin-small-right video uk-border-rounded uk-width-1-1@m"
+                        playsinline controls data-poster="images/t1.jpg">
                         <source th:src="@{videos/overwiew.mp4}" type="video/mp4">
                         <source th:src="@{videos/overwiew.mp4}" type="video/mp4">
 
@@ -574,8 +576,8 @@
 
 
     <!-- ! FOOTER -->
-	<footer id="page-footer" class="" uk-sticky th:replace="fragments/footer :: footer"></footer>
-	
+    <footer id="page-footer" class="" uk-sticky th:replace="fragments/footer :: footer"></footer>
+
 </body>
 
 </html>
