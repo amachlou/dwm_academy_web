@@ -13,7 +13,7 @@ import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
-import ma.dwm.dwmacademy.utils.enum_userType;
+import ma.dwm.dwmacademy.utils.Enum_userType;
 
 @Controller
 @CrossOrigin("*")
@@ -49,10 +49,10 @@ public class ApplicationController {
 	@ModelAttribute
 	public void addAttributes(Model model, User user) {
 //		 @AuthenticationPrincipal
-		model.addAttribute("user", userRepository.findByType(enum_userType.ADMIN).get(0));
+		model.addAttribute("user", userRepository.findByType(Enum_userType.ADMIN).get(0));
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
-		model.addAttribute("teachers", userRepository.findByType(enum_userType.TEACHER));
+		model.addAttribute("teachers", userRepository.findByType(Enum_userType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
 	}
 	

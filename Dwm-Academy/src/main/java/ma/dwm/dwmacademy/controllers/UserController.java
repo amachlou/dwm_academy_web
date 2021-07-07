@@ -21,7 +21,7 @@ import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
-import ma.dwm.dwmacademy.utils.enum_userType;
+import ma.dwm.dwmacademy.utils.Enum_userType;
 
 
 @Controller
@@ -47,11 +47,11 @@ public class UserController {
 	public String getOne(User user, @PathVariable("id") long id, @RequestParam(defaultValue = "") String target,  Model model){
 //		model.addAttribute("user", userRepository.findById(id));
 		model.addAttribute("target", target);
-		if(user.getType().toString().equals(enum_userType.ADMIN.toString())) {
+		if(user.getType().toString().equals(Enum_userType.ADMIN.toString())) {
 		return "admin-dashboard";
-		} else if(user.getType().toString().equals(enum_userType.TEACHER.toString())) {
+		} else if(user.getType().toString().equals(Enum_userType.TEACHER.toString())) {
 			return "teacher-dashboard";
-		} else if(user.getType().toString().equals(enum_userType.STUDENT.toString())){
+		} else if(user.getType().toString().equals(Enum_userType.STUDENT.toString())){
 			return "student-dashboard";
 		} else {
 			return "index";
@@ -65,8 +65,8 @@ public class UserController {
 	
 	@GetMapping("/signup")
 	public String int_signup(@RequestParam(defaultValue = "") String target, User user, Model model) {
-		model.addAttribute("target", enum_userType.TEACHER);
-		model.addAttribute("user_types", enum_userType.values());
+		model.addAttribute("target", Enum_userType.TEACHER);
+		model.addAttribute("user_types", Enum_userType.values());
 		model.addAttribute("categories", categoyRepository.findAll());
 		return "user-form";
 	}
@@ -119,6 +119,11 @@ public class UserController {
 		return getAll(model);//"redirect:";
 	}
 	
+	@PostMapping("/logout")
+	public String update(Model model) {
+		return "index";
+	}
+	
 	@GetMapping("/delete/{id}")
 	public String deleteUser(@PathVariable("id") long id, Model model) {
 	    User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
@@ -139,10 +144,10 @@ public class UserController {
 	public void addAttributes(Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("best_categories", categoryRepository.getBestCategories());
-		model.addAttribute("teachers", userRepository.findByType(enum_userType.TEACHER));
+		model.addAttribute("teachers", userRepository.findByType(Enum_userType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
-		model.addAttribute("user_types", enum_userType.values());
-		model.addAttribute("user", userRepository.findByType(enum_userType.ADMIN).get(0)); // TODO For testing
+		model.addAttribute("user_types", Enum_userType.values());
+		model.addAttribute("user", userRepository.findByType(Enum_userType.ADMIN).get(0)); // TODO For testing
 	}
 	
 	
