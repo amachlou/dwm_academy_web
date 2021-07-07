@@ -30,7 +30,7 @@
             <li><a th:href="@{/users/signup/}">Signup</a></li>
             <li><a class="login" th:href="@{/users/signin/}">Login</a></li>
         </ul> -->
-        <ul class="uk-navbar-nav" th:if="${user != null}">
+        <ul class="uk-navbar-nav" th:if="${user == null}">
             <li><a href="#modal-sections-signup" uk-toggle>Signup</a></li>
             <li><a href="#modal-sections-login" uk-toggle class="login">Login</a></li>
         </ul>
@@ -46,7 +46,7 @@
                 <div class="uk-navbar-dropdown uk-border-rounded">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                     	<li><a th:href="@{/users/__${user.id}__(target=profile)}">My Profile</a></li>
-                        <li><a th:href="@{/users/__${user.id}__(target=courses)}">My Courses</a></li>
+                        <li><a th:href="@{/users/logout}">Logout</a></li>
                     </ul>
                 </div>
             </li>
