@@ -41,24 +41,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http
 			.authorizeRequests()
-//			.antMatchers("/users").authenticated()
-//			.antMatchers("/categories/**")./hasAnyRole("ADMIN")
-//			.antMatchers("/categories").authenticated()
-//			.antMatchers("/courses/**").hasAnyRole("ADMIN","TEACHER")
-//			.antMatchers("/courses").authenticated()
-//			.antMatchers("/users/signup").permitAll()
-//			.antMatchers("/users/signin").permitAll()
+//			.antMatchers("/web/users").authenticated()
+//			.antMatchers("/web/categories/**")./hasAnyRole("ADMIN")
+//			.antMatchers("/web/categories").authenticated()
+//			.antMatchers("/web/courses/**").hasAnyRole("ADMIN","TEACHER")
+//			.antMatchers("/web/courses").authenticated()
+//			.antMatchers("/web/users/signup").permitAll()
+//			.antMatchers("/web/users/signin").permitAll()
 			.antMatchers("/**").permitAll() // For demonstration
 	//		.antMatchers("/","static/css","static/js").permitAll()
 			.and()
 			.formLogin().permitAll()
-			.loginPage("/users/signin")
-			.loginProcessingUrl("/users/signin")
-			.defaultSuccessUrl("/users/home",true)
-			.failureUrl("/users/signin").permitAll()
+			.loginPage("/web/users/signin")
+			.loginProcessingUrl("/web/users/signin")
+			.defaultSuccessUrl("/web/users/home",true)
+			.failureUrl("/web/users/signin").permitAll()
 			.and()
 			.logout()
-			.logoutUrl("/users/logout")
+			.logoutUrl("/web/users/logout")
 			.logoutSuccessUrl("/");
 		
 	}

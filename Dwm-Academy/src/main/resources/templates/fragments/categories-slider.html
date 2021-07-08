@@ -4,7 +4,7 @@
             <h2 class="uk-text-center">CATEGORIES</h2>
 
             <ul class="uk-flex-center" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium" uk-tab>
-                <li th:each="category:${best_categories}"><a th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a></li>
+                <li th:each="category:${best_categories}"><a th:href="@{/web/categories/__${category.id}__}" th:text="${category.name}"></a></li>
             </ul>
 
             <ul class="uk-switcher uk-margin category" th:each="category:${best_categories}">

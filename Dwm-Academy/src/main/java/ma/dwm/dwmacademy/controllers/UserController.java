@@ -25,7 +25,7 @@ import ma.dwm.dwmacademy.utils.Enum_userType;
 
 
 @Controller
-@RequestMapping(path = "/users")
+@RequestMapping(path = "/web/users")
 public class UserController {
 	
 	@Autowired
@@ -90,7 +90,7 @@ public class UserController {
 //			return new ModelAndView("redirect:/signup");
 			return "user-form";
 		}
-//		return new ModelAndView("redirect:/users/signin");
+//		return new ModelAndView("redirect:/web/users/signin");
 		return "home";
 	}
 	
@@ -106,7 +106,7 @@ public class UserController {
 		}
 		user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));;
 		
-		return new ModelAndView("redirect:/users/home", model);
+		return new ModelAndView("redirect:/web/users/home", model);
 	}
 	
 	@PostMapping("/logout")

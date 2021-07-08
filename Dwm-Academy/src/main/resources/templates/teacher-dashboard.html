@@ -76,7 +76,7 @@
 
                             <!-- ? form -->
 
-                            <form class="uk-form-stacked uk-child-width-1-2@m uk-hidden" id="profile-form" method="post" th:action="@{/users/update/__${user.id}__}" th:object="${user}">
+                            <form class="uk-form-stacked uk-child-width-1-2@m uk-hidden" id="profile-form" method="post" th:action="@{/web/users/update/__${user.id}__}" th:object="${user}">
 
                                 <div class="uk-margin-medium">
                                     <label class="uk-form-label" for="first">Fisrt Name</label>
@@ -290,7 +290,7 @@
                                     <div class="uk-margin uk-margin-large-top">
                                         <a uk-scroll
                                             class="uk-button uk-button-default uk-margin-medium uk-button-small uk-border-rounded uk-text-capitalize setting"
-                                            type="button" id="add-course" th:href="@{/courses/add/__${user.id}__}">Add Course</a>
+                                            type="button" id="add-course" th:href="@{/web/courses/add/__${user.id}__}">Add Course</a>
                                     </div>
 
 

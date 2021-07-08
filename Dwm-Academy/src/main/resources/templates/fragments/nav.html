@@ -7,8 +7,8 @@
                 <a href="#" class="categories">CATEGORIES</a>
                 <div class="uk-navbar-dropdown uk-width-medium uk-border-rounded uk-margin-xlarge-top">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                   		<li><a class="uk-text-truncate" th:each="category : ${best_categories}" th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a></li>
-                   		<li><a class="uk-text-truncate" th:href="@{/categories}">More...</a></li>
+                   		<li><a class="uk-text-truncate" th:each="category : ${best_categories}" th:href="@{/web/categories/__${category.id}__}" th:text="${category.name}"></a></li>
+                   		<li><a class="uk-text-truncate" th:href="@{/web/categories}">More...</a></li>
                     </ul>
                 </div>
             </li>
@@ -27,8 +27,8 @@
     <!-- If not logged in -->
     <div class="uk-navbar-right">
         <!-- <ul class="uk-navbar-nav">
-            <li><a th:href="@{/users/signup/}">Signup</a></li>
-            <li><a class="login" th:href="@{/users/signin/}">Login</a></li>
+            <li><a th:href="@{/web/users/signup/}">Signup</a></li>
+            <li><a class="login" th:href="@{/web/users/signin/}">Login</a></li>
         </ul> -->
         <ul class="uk-navbar-nav" th:if="${user == null}">
             <li><a href="#modal-sections-signup" uk-toggle>Signup</a></li>
@@ -45,8 +45,8 @@
                     th:src="@{/images/default-picture.png}">
                 <div class="uk-navbar-dropdown uk-border-rounded">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                    	<li><a th:href="@{/users/__${user.id}__(target=profile)}">My Profile</a></li>
-                        <li><a th:href="@{/users/logout}">Logout</a></li>
+                    	<li><a th:href="@{/web/users/__${user.id}__(target=profile)}">My Profile</a></li>
+                        <li><a th:href="@{/web/users/logout}">Logout</a></li>
                     </ul>
                 </div>
             </li>
@@ -73,7 +73,7 @@
             <li class="uk-parent dropdown-category">
                 <p href="#" class="uk-text-bolder">CATEGORIES</p>
                 <ul class="uk-nav-sub">
-                    <li><a class="uk-text-truncate" th:each="category : ${categories}" th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a></li>
+                    <li><a class="uk-text-truncate" th:each="category : ${categories}" th:href="@{/web/categories/__${category.id}__}" th:text="${category.name}"></a></li>
                 </ul>
             </li>
         </ul>

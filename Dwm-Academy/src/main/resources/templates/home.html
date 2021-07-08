@@ -131,7 +131,7 @@
                                                         <div uk-dropdown="pos: right-bottom"
                                                             class="uk-padding-remove-vertical uk-border-rounded uk-flex-1">
                                                             <ul class="uk-nav uk-dropdown-nav">
-                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span>Course added to list'})"><a th:href="${/users/_${user.id}_/courses/_${course.id}_/add}">Add to my list</a></li>
+                                                                <li onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span>Course added to list'})"><a th:href="${/web/users/_${user.id}_/courses/_${course.id}_/add}">Add to my list</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -392,7 +392,7 @@
                                 <p th:text="${course.teacher.first_name+' '+course.teacher.last_name}"></p><span th:text="${course.duration}"></span>
                             </div>
                             <div class="uk-flex uk-flex-between">
-                                <button class="uk-button uk-button-default uk-border-rounded" th:href="@{/courses/add/__${user.id}__}">Enroll now</button>
+                                <button class="uk-button uk-button-default uk-border-rounded" th:href="@{/web/courses/add/__${user.id}__}">Enroll now</button>
                                 <span class="enroll uk-text-small uk-text-light uk-text-center uk-margin-remove">
                                 	<strong th:if="${course.list_students != null}" th:text="${#list.size(course.list_students)}"></strong> students
                                 </span>

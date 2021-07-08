@@ -29,7 +29,7 @@
                         <h2>Join DWM Academy for Free</h2>
                         <p>Get started now</p>
 
-                        <form action="#" class="uk-grid-small sign-form" uk-grid method="post" th:action="@{/users/signup}" th:object="${user}">
+                        <form action="#" class="uk-grid-small sign-form" uk-grid method="post" th:action="@{/web/users/signup}" th:object="${user}">
                         	
                             <div class="uk-width-1-2@s">
                                 <div class="uk-form-controls">
@@ -108,7 +108,7 @@
                     <h2>Welcome Back to DWM Academy</h2>
                     <p>Sign in to continue to your account.</p>
     
-                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" th:action="@{/users/signin}" th:object="${user}">
+                    <form class="uk-width-1-1@s uk-grid-small sign-form" uk-grid method="post" th:action="@{/web/users/signin}" th:object="${user}">
                         <div class="uk-width-1-1@s">
                             <div class="uk-margin">
                                 <div class="uk-inline uk-width-1-2@s">

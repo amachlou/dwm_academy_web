@@ -21,7 +21,7 @@ import ma.dwm.dwmacademy.utils.Enum_userType;
 
 
 @Controller
-@RequestMapping(path = "/courses")
+@RequestMapping(path = "/web/courses")
 public class CourseController {
 	
 	@Autowired

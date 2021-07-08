@@ -5,8 +5,8 @@
                 <div>
                     <h4>CATEGORIES</h4>
                     <ul class="uk-list">
-                        <a th:each="category : ${best_categories}" th:href="@{/categories/__${category.id}__}" th:text="${category.name}"></a>
-                        <a th:href="@{/categories}">More...</a>
+                        <a th:each="category : ${best_categories}" th:href="@{/web/categories/__${category.id}__}" th:text="${category.name}"></a>
+                        <a th:href="@{/web/categories}">More...</a>
                     </ul>
                 </div>
 				

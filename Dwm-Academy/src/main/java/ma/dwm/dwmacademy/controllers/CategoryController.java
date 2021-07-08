@@ -22,7 +22,7 @@ import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 
 
 @Controller
-@RequestMapping(path = "/categories")
+@RequestMapping(path = "/web/categories")
 public class CategoryController {
 	
 	@Autowired
