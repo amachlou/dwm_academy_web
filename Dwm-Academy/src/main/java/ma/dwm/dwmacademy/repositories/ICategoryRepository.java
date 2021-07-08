@@ -5,11 +5,12 @@ import java.util.List;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 import ma.dwm.dwmacademy.entities.Category;
 
-@Repository
+@RepositoryRestResource
 public interface ICategoryRepository extends JpaRepository<Category, Long> {
 	
 	@Query("FROM Category c ORDER BY c.id DESC") // Select popular categories
