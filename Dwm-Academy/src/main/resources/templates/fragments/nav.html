@@ -39,7 +39,7 @@
     <!-- If logged in -->
     <div class="uk-navbar-right uk-width-1-6" sec:authotize="isAuthenticated()">
         <ul class="uk-navbar-nav">
-            <li class="uk-margin-small-right"><a href="#">My Courses</a></li>
+            <li class="uk-margin-small-right"><a th:href="@{/web/users/__${user.id}__/courses}">My Courses</a></li>
             <li>
                 <img class="uk-border-circle uk-margin-small-top profile-img" width="50" height="50"
                     th:src="@{/images/default-picture.png}">

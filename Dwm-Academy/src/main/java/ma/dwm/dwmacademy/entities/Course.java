@@ -16,11 +16,13 @@ import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "COURSES")
-@Data @NoArgsConstructor @AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Course extends BaseEntity {
 	
 	@Column(nullable = false)
@@ -39,7 +41,7 @@ public class Course extends BaseEntity {
 	@ManyToOne
 	private User teacher;
 	
-	@OneToMany(mappedBy = "course")
+	@OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
 	private List<Content> list_contents;
 	
 	@ManyToMany(mappedBy = "list_courses", fetch = FetchType.EAGER)

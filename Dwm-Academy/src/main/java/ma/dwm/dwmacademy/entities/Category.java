@@ -5,23 +5,25 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "CATEGORIES")
-@Data @NoArgsConstructor @AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Category extends BaseEntity {
 	
 	@Column(nullable = false)
 	private String name;
 	private String photo;
 	
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
 	private Set<Course> list_courses = new HashSet<>();
 	
 }

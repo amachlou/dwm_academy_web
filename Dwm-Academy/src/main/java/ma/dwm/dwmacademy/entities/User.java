@@ -1,6 +1,5 @@
 package ma.dwm.dwmacademy.entities;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -11,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
@@ -23,19 +23,22 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import ma.dwm.dwmacademy.utils.Enum_gender;
 import ma.dwm.dwmacademy.utils.Enum_userType;
 
 @Entity
 @Table(name = "USERS")
-@Data @NoArgsConstructor @AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class User extends BaseEntity {
 	
 //	@NotBlank(message = "First name is mandatory")
-	@Size(min = 4, max = 50, message = "First name length should be betweeen 4 to 50 caracters")
+//	@Size(min = 4, max = 50, message = "First name length should be betweeen 4 to 50 caracters")
 	@Column(nullable = false, length = 50)
 	private String first_name;
 	
@@ -46,7 +49,7 @@ public class User extends BaseEntity {
 	
 //	@NotBlank(message = "Email is mandatory")
 //	@Size(min = 4, max = 100, message = "First name length should be betweeen 4 to 100 caracters")
-	@Email(message = "Email should be valid")
+//	@Email(message = "Email should be valid")
 	@Column(nullable = false, length = 100)
 	private String email;
 	
@@ -56,14 +59,17 @@ public class User extends BaseEntity {
 	@Temporal(TemporalType.DATE)
 	private Date date_birth;
 	
+	@JsonIgnore
 //	@NotBlank(message = "Password is mandatory")
 //	@Size(min = 4, max = 50, message = "Password lenth should be betweeen 4 to 50 caracters")
 	@Column(nullable = false)
 	private String password;
 	
+	@JsonIgnore
 	@Transient
 	private String current_password;
 	
+	@JsonIgnore
 //	@NotBlank(message = "Password confirmation is mandatory")
 //	@Size(min = 4, max = 50, message = "Password confirmation length should be betweeen 4 to 50 caracters")
 	@Transient
@@ -84,15 +90,15 @@ public class User extends BaseEntity {
 	private String introduction;
 	
 //	 For teacher
-	@OneToMany(mappedBy = "teacher")
+	@OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
 	private Set<Course> list_teacher_courses = new HashSet<>();
 	
-//	For Students
-	@OneToMany(mappedBy = "student")
-	private List<Review> list_reviews = new ArrayList<>();
+//	For review
+	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+	private Set<Review> list_reviews = new HashSet<>();
 	
 //	For Admin
-	@OneToMany(mappedBy = "admin")
+	@OneToMany(mappedBy = "admin", fetch = FetchType.LAZY)
 	private Set<Course> list_admin_courses = new HashSet<>();
 	
 	@ManyToMany(cascade = CascadeType.ALL)

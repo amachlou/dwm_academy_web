@@ -4,7 +4,7 @@
   <interface id="1" language="java" name="ma.dwm.dwmacademy.repositories.ICategoryRepository" project="dwm-academy" 
     file="/dwm-academy/src/main/java/ma/dwm/dwmacademy/repositories/ICategoryRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="245" x="347" y="261"/>    
+    <position height="99" width="245" x="255" y="423"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -14,7 +14,7 @@
   <interface id="2" language="java" name="ma.dwm.dwmacademy.repositories.IContentRepository" project="dwm-academy" 
     file="/dwm-academy/src/main/java/ma/dwm/dwmacademy/repositories/IContentRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="63" width="156" x="632" y="261"/>    
+    <position height="63" width="156" x="540" y="423"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -24,7 +24,7 @@
   <interface id="3" language="java" name="ma.dwm.dwmacademy.repositories.ICourseRepository" project="dwm-academy" 
     file="/dwm-academy/src/main/java/ma/dwm/dwmacademy/repositories/ICourseRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="63" width="156" x="828" y="261"/>    
+    <position height="63" width="156" x="736" y="423"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -34,7 +34,7 @@
   <interface id="4" language="java" name="ma.dwm.dwmacademy.repositories.IUserRepository" project="dwm-academy" 
     file="/dwm-academy/src/main/java/ma/dwm/dwmacademy/repositories/IUserRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="220" x="1024" y="261"/>    
+    <position height="99" width="220" x="932" y="423"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -44,7 +44,7 @@
   <interface id="5" language="java" name="ma.dwm.dwmacademy.repositories.IReviewRepository" project="dwm-academy" 
     file="/dwm-academy/src/main/java/ma/dwm/dwmacademy/repositories/IReviewRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="63" width="156" x="1284" y="261"/>    
+    <position height="63" width="156" x="1192" y="423"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

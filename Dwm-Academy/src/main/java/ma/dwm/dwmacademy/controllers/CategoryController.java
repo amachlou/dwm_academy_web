@@ -13,7 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ma.dwm.dwmacademy.entities.Category;
@@ -50,7 +50,7 @@ public class CategoryController {
 		return "update-category";
 	}
 	
-	@PostMapping("/update")
+	@PutMapping("/update")
 	public String update(@Valid Category category, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			return "update-category";

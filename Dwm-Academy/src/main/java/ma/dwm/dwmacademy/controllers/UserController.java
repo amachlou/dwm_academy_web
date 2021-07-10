@@ -50,12 +50,8 @@ public class UserController {
 		User user = userRepository.findByType(Enum_userType.ADMIN).get(0);
 		model.addAttribute("target", target);
 		
-		if(user.getType().toString().equals(Enum_userType.ADMIN.toString())) {
-			return "admin-dashboard";
-		} else if(user.getType().toString().equals(Enum_userType.TEACHER.toString())) {
-			return "teacher-dashboard";
-		} else if(user.getType().toString().equals(Enum_userType.STUDENT.toString())){
-			return "student-dashboard";
+		if(user != null) {
+			return user.getType().toString().toLowerCase()+"-dashboard";
 		} else {
 			return "index";
 		}
@@ -144,6 +140,13 @@ public class UserController {
 	    user.getList_courses().add(course);
 	    userRepository.save(user);
 	    return getAll(model);
+	}
+	
+	@GetMapping("/{user_id}/courses")
+	public String getCourses(@PathVariable("user_id") long user_id, Model model) {
+	    User user = userRepository.findById(user_id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + user_id));
+	    model.addAttribute("courses", user.getList_courses());
+	    return user.getType().toString().toLowerCase()+"-dashboard";
 	}
 	
 	@ModelAttribute

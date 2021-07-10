@@ -1,6 +1,7 @@
 package ma.dwm.dwmacademy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -56,7 +57,7 @@ public class ApplicationController {
 //		 @AuthenticationPrincipal
 		model.addAttribute("user", userRepository.findByType(Enum_userType.ADMIN).get(0));
 		model.addAttribute("categories", categoryRepository.findAll());
-		model.addAttribute("best_categories", categoryRepository.getBestCategories());
+		model.addAttribute("best_categories", categoryRepository.getCategoriesPage(PageRequest.of(0, 3)));
 		model.addAttribute("teachers", userRepository.findByType(Enum_userType.TEACHER));
 		model.addAttribute("courses", courseRepository.findAll());
 	}
