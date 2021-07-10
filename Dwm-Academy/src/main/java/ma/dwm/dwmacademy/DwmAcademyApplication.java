@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import ma.dwm.dwmacademy.entities.Category;
+import ma.dwm.dwmacademy.entities.User;
 import ma.dwm.dwmacademy.repositories.ICategoryRepository;
 import ma.dwm.dwmacademy.repositories.ICourseRepository;
 import ma.dwm.dwmacademy.repositories.IUserRepository;
@@ -46,8 +48,9 @@ public class DwmAcademyApplication implements CommandLineRunner {
 //		categoryRepository.save(cat_science);
 		
 //		courseRepository.save(new Course("UML for dummies", "UML for dummies 101", new Date(), null, null, cat_science, null, null, null);
-		
-//		Course(String, String, Date, String, User, Category, User, List<Content>, Set<User>)
+
+//		Course(String, String, Date, String, User, Category, User, List<Content>, Set<User>);
+//		Course(String, String, Date, String, User, Category, User, List<Content>, );
 		
 		String password = new BCryptPasswordEncoder().encode("01");
 //		Teacher
@@ -56,6 +59,15 @@ public class DwmAcademyApplication implements CommandLineRunner {
 //		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
 //		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
 //		userRepository.save(new User("Abderrahim", "Machlou", "amachlou@dwm.ma", "123456", "TEACHER", null, null, null, null, null));
+
+//		User u1 = new User(password, password, password, password, null, password, password, password, null, null, password, false, password, null, null, null, null);
+//		"$2a$10$tQSejRVjxWWHBZN0h1.G/OiZKvCpYNjmkuVUKR106YA8Dqfo0UOHS"
+//		userRepository.save(new User("Ahmed", "Hassnaoui", "mail@mail.com", "Web analyst", null, password, password, password, null, null, password, false, password, null, null, null, null));
+//		userRepository.save(new User("Fatima", "Raachid", "mail@mail.com", "Economics expert", null, password, password, password, null, null, password, false, password, null, null, null, null));
+//		userRepository.save(new User("Jihane", "Arfi", "mail@mail.com", "Web analyst", null, password, password, password, null, null, password, false, password, null, null, null, null));
+////		userRepository.save(new User("Aziz", "Daif", "mail@mail.com", "", "Web analyst", password, password, password, null, null, password, false, password, null, null, null, null));
+//		userRepository.save(new User("Yussra", "Hassani", "mail@mail.com", "Technical exppert", null, password, password, password, null, null, password, false, password, null, null, null, null));
+//		userRepository.save(new User("Abderrahim", "Machlou", "mail@mail.com", "Java developer", null, password, password, password, null, null, password, false, password, null, null, null, null));
 		
 		
 
